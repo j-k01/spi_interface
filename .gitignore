@@ -4,27 +4,8 @@
 *.str
 *.cache/
 *.hw/
-*.ip_user_files/
 *.runs/
 *.sim/
-*.srcs/sources_1/ip/*/
-*.srcs/sources_1/bd/*/hdl/
-*.gen/
-*.hbs
-*.tmp
-*.xpr.orig
-*.xpr~
-*.zip
-
-# Vivado synthesis and implementation results
-*.bit
-*.ltx
-*.rpt
-*.dcp
-*.hwdef
-*.xsa
-
-# Vivado directories to ignore
 .Xil/
 vivado_pid*.str
 vivado*.jou
@@ -33,3 +14,36 @@ fsm_encoding.os
 webtalk*.jou
 webtalk*.log
 usage_statistics_webtalk.*
+
+# Synthesis and implementation results
+*.bit
+*.ltx
+*.rpt
+*.dcp
+*.hwdef
+*.xsa
+
+# BUT KEEP these important files for custom IP:
+!*.srcs/sources_1/ip/
+!*.srcs/sources_1/ip/**/*.vhd
+!*.srcs/sources_1/ip/**/*.v
+!*.srcs/sources_1/ip/**/*.xci
+!*.srcs/sources_1/ip/**/*.tcl
+!*.srcs/sources_1/ip/**/component.xml
+!*.srcs/sources_1/ip/**/xgui/
+
+# Keep block design files
+!*.srcs/sources_1/bd/
+!*.srcs/sources_1/bd/**/*.bd
+!*.srcs/sources_1/bd/**/*.tcl
+
+# Exclude generated BD files but keep source
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/sources_1/bd/*/synth/
+*.srcs/sources_1/bd/*/sim/
+
+# Keep constraint files
+!*.srcs/constrs_1/
+
+# Keep your custom source files
+!*.srcs/sources_1/new/

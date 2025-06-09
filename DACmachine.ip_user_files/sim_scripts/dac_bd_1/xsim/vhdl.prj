@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/dac_bd_1/ip/dac_bd_1_rst_ps7_0_100M_0/sim/dac_bd_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/dac_bd_1/ip/dac_bd_1_axi_bram_ctrl_0_0/sim/dac_bd_1_axi_bram_ctrl_0_0.vhd" \
+
+# Do not sort compile order
+nosort
