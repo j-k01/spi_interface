@@ -61,7 +61,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ab8667ce</spirit:value>
+            <spirit:value>a19b8b32</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -74,7 +74,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ab8667ce</spirit:value>
+            <spirit:value>a19b8b32</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -202,7 +202,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>LDAC_LOW_NS</spirit:name>
         <spirit:displayName>Ldac Low Ns</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.LDAC_LOW_NS">20</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.LDAC_LOW_NS">200</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>COOLDOWN_NS</spirit:name>
@@ -239,7 +239,7 @@
     <spirit:parameter>
       <spirit:name>LDAC_LOW_NS</spirit:name>
       <spirit:displayName>Ldac Low Ns</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.LDAC_LOW_NS">20</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.LDAC_LOW_NS">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>COOLDOWN_NS</spirit:name>
@@ -266,7 +266,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-06-08T05:55:03Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-06-09T20:54:40Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.1</xilinx:xilinxVersion>

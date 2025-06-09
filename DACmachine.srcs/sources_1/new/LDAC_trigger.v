@@ -2,7 +2,7 @@ module LDAC_trigger #
 (
     // ----- user-tunable parameters ------------------------------------------
     parameter integer CLK_HZ            = 100_000_000,   // system clock rate
-    parameter integer LDAC_LOW_NS       = 20,            // ? 10 ns (datasheet t13)
+    parameter integer LDAC_LOW_NS       = 200,            // ? 10 ns (datasheet t13)
     parameter integer COOLDOWN_NS       = 30_000             // ? 30 µs (datasheet t17)
 )
 (
@@ -61,7 +61,7 @@ module LDAC_trigger #
                 end
             end
 
-            if (primed && I_BUSY_N) begin
+            if ((primed && I_BUSY_N) && ~I_FORCE) begin
                 primed     <= 1'b0;
                 ldac_n     <= 1'b0;
                 pulse_cnt  <= PULSE_CLKS - 1;
@@ -74,6 +74,8 @@ module LDAC_trigger #
                     cooldown <= 1'b1;
                     cool_cnt <= COOLDOWN_CLKS;
                 end
+            end else begin
+                ldac_n <= 1'b1;
             end
 
             if (cool_cnt != 0) begin

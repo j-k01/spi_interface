@@ -9,14 +9,14 @@
     "parameters": {
       "component_parameters": {
         "CLK_HZ": [ { "value": "100000000", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "RESET_LOW_NS": [ { "value": "30", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "CLR_LOW_NS": [ { "value": "140", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "RESET_LOW_NS": [ { "value": "1000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "CLR_LOW_NS": [ { "value": "1400", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "dac_bd_1_DAC_reset_clr_trigger_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "CLK_HZ": [ { "value": "100000000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "RESET_LOW_NS": [ { "value": "30", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "CLR_LOW_NS": [ { "value": "140", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "RESET_LOW_NS": [ { "value": "1000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "CLR_LOW_NS": [ { "value": "1400", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],

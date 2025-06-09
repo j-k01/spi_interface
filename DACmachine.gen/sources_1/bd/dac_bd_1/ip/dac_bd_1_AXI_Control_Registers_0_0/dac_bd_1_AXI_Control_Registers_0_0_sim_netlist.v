@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Sat Jun  7 23:53:36 2025
+// Date        : Mon Jun  9 13:14:34 2025
 // Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0_sim_netlist.v
@@ -1405,12 +1405,12 @@ module dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI
         .I2(S_AXI_AWREADY),
         .I3(s00_axi_wvalid),
         .O(slv_reg_wren__2));
-  FDRE \slv_reg0_reg[0] 
+  FDSE \slv_reg0_reg[0] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .D(\slv_reg0[0]_i_1_n_0 ),
         .Q(O_LDAC_FORCE_CTRL),
-        .R(p_0_in));
+        .S(p_0_in));
   LUT5 #(
     .INIT(32'h00000080)) 
     \slv_reg4[15]_i_1 

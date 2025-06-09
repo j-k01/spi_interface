@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "DAC_reset_clr_trigger,Vivado 2023.1" *)
 (* CHECK_LICENSE_TYPE = "dac_bd_1_DAC_reset_clr_trigger_0_0,DAC_reset_clr_trigger,{}" *)
-(* CORE_GENERATION_INFO = "dac_bd_1_DAC_reset_clr_trigger_0_0,DAC_reset_clr_trigger,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=DAC_reset_clr_trigger,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLK_HZ=100000000,RESET_LOW_NS=30,CLR_LOW_NS=140}" *)
+(* CORE_GENERATION_INFO = "dac_bd_1_DAC_reset_clr_trigger_0_0,DAC_reset_clr_trigger,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=DAC_reset_clr_trigger,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLK_HZ=100000000,RESET_LOW_NS=1000,CLR_LOW_NS=1400}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module dac_bd_1_DAC_reset_clr_trigger_0_0 (
@@ -79,8 +79,8 @@ output wire O_CLR_N;
 
   DAC_reset_clr_trigger #(
     .CLK_HZ(100000000),
-    .RESET_LOW_NS(30),
-    .CLR_LOW_NS(140)
+    .RESET_LOW_NS(1000),
+    .CLR_LOW_NS(1400)
   ) inst (
     .I_CLK(I_CLK),
     .I_RSTN(I_RSTN),

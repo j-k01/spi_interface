@@ -78,8 +78,8 @@ output wire O_CLR_N;
 
   DAC_reset_clr_trigger #(
     .CLK_HZ(100000000),
-    .RESET_LOW_NS(30),
-    .CLR_LOW_NS(140)
+    .RESET_LOW_NS(1000),
+    .CLR_LOW_NS(1400)
   ) inst (
     .I_CLK(I_CLK),
     .I_RSTN(I_RSTN),

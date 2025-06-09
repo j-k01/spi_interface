@@ -117,13 +117,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/LDAC_trigger.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/BRAM_reader.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -138,15 +131,19 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/LDAC_trigger_v2.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/dac_bd_1/dac_bd_1.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_LDAC_trigger_0_0/dac_bd_1_LDAC_trigger_0_0.xci">
-          <Proxy FileSetName="dac_bd_1_LDAC_trigger_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0.xci">
           <Proxy FileSetName="dac_bd_1_AXI_Control_Registers_0_0"/>
         </CompFileExtendedInfo>
@@ -156,23 +153,11 @@
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_led_driver_0_0/dac_bd_1_led_driver_0_0.xci">
           <Proxy FileSetName="dac_bd_1_led_driver_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_AXI_Configuration_Re_0_0/dac_bd_1_AXI_Configuration_Re_0_0.xci">
-          <Proxy FileSetName="dac_bd_1_AXI_Configuration_Re_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_rst_ps7_0_100M_0/dac_bd_1_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="dac_bd_1_rst_ps7_0_100M_0"/>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_LDAC_trigger_v2_0_0/dac_bd_1_LDAC_trigger_v2_0_0.xci">
+          <Proxy FileSetName="dac_bd_1_LDAC_trigger_v2_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_spi_interface_0_0/dac_bd_1_spi_interface_0_0.xci">
           <Proxy FileSetName="dac_bd_1_spi_interface_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_xbar_0/dac_bd_1_xbar_0.xci">
-          <Proxy FileSetName="dac_bd_1_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_processing_system7_0_1/dac_bd_1_processing_system7_0_1.xci">
-          <Proxy FileSetName="dac_bd_1_processing_system7_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_axi_bram_ctrl_0_bram_0/dac_bd_1_axi_bram_ctrl_0_bram_0.xci">
-          <Proxy FileSetName="dac_bd_1_axi_bram_ctrl_0_bram_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_bram_dr_multiplexer_0_0/dac_bd_1_bram_dr_multiplexer_0_0.xci">
           <Proxy FileSetName="dac_bd_1_bram_dr_multiplexer_0_0"/>
@@ -180,12 +165,35 @@
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_DAC_reset_clr_trigger_0_0/dac_bd_1_DAC_reset_clr_trigger_0_0.xci">
           <Proxy FileSetName="dac_bd_1_DAC_reset_clr_trigger_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_axi_bram_ctrl_0_bram_0/dac_bd_1_axi_bram_ctrl_0_bram_0.xci">
+          <Proxy FileSetName="dac_bd_1_axi_bram_ctrl_0_bram_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_axi_bram_ctrl_0_0/dac_bd_1_axi_bram_ctrl_0_0.xci">
           <Proxy FileSetName="dac_bd_1_axi_bram_ctrl_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_AXI_Configuration_Re_0_0/dac_bd_1_AXI_Configuration_Re_0_0.xci">
+          <Proxy FileSetName="dac_bd_1_AXI_Configuration_Re_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_rst_ps7_0_100M_0/dac_bd_1_rst_ps7_0_100M_0.xci">
+          <Proxy FileSetName="dac_bd_1_rst_ps7_0_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_processing_system7_0_1/dac_bd_1_processing_system7_0_1.xci">
+          <Proxy FileSetName="dac_bd_1_processing_system7_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="dac_bd_1.bd" FileRelPathName="ip/dac_bd_1_xbar_0/dac_bd_1_xbar_0.xci">
+          <Proxy FileSetName="dac_bd_1_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/dac_bd_1/hdl/dac_bd_1_wrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/LDAC_trigger.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -284,12 +292,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="dac_bd_1_DAC_reset_clr_trigger_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_DAC_reset_clr_trigger_0_0" RelGenDir="$PGENDIR/dac_bd_1_DAC_reset_clr_trigger_0_0">
-      <Config>
-        <Option Name="TopModule" Val="dac_bd_1_DAC_reset_clr_trigger_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="dac_bd_1_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_xbar_0" RelGenDir="$PGENDIR/dac_bd_1_xbar_0">
       <Config>
         <Option Name="TopModule" Val="dac_bd_1_xbar_0"/>
@@ -314,18 +316,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="dac_bd_1_LDAC_trigger_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_LDAC_trigger_0_0" RelGenDir="$PGENDIR/dac_bd_1_LDAC_trigger_0_0">
-      <Config>
-        <Option Name="TopModule" Val="dac_bd_1_LDAC_trigger_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="dac_bd_1_AXI_Control_Registers_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_AXI_Control_Registers_0_0" RelGenDir="$PGENDIR/dac_bd_1_AXI_Control_Registers_0_0">
-      <Config>
-        <Option Name="TopModule" Val="dac_bd_1_AXI_Control_Registers_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="dac_bd_1_BRAM_reader_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_BRAM_reader_0_0" RelGenDir="$PGENDIR/dac_bd_1_BRAM_reader_0_0">
       <Config>
         <Option Name="TopModule" Val="dac_bd_1_BRAM_reader_0_0"/>
@@ -335,6 +325,24 @@
     <FileSet Name="dac_bd_1_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_led_driver_0_0" RelGenDir="$PGENDIR/dac_bd_1_led_driver_0_0">
       <Config>
         <Option Name="TopModule" Val="dac_bd_1_led_driver_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="dac_bd_1_AXI_Control_Registers_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_AXI_Control_Registers_0_0" RelGenDir="$PGENDIR/dac_bd_1_AXI_Control_Registers_0_0">
+      <Config>
+        <Option Name="TopModule" Val="dac_bd_1_AXI_Control_Registers_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="dac_bd_1_LDAC_trigger_v2_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_LDAC_trigger_v2_0_0" RelGenDir="$PGENDIR/dac_bd_1_LDAC_trigger_v2_0_0">
+      <Config>
+        <Option Name="TopModule" Val="dac_bd_1_LDAC_trigger_v2_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="dac_bd_1_DAC_reset_clr_trigger_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dac_bd_1_DAC_reset_clr_trigger_0_0" RelGenDir="$PGENDIR/dac_bd_1_DAC_reset_clr_trigger_0_0">
+      <Config>
+        <Option Name="TopModule" Val="dac_bd_1_DAC_reset_clr_trigger_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -408,16 +416,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="dac_bd_1_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_xbar_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_xbar_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_xbar_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_xbar_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
@@ -458,26 +456,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dac_bd_1_LDAC_trigger_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_LDAC_trigger_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_LDAC_trigger_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_LDAC_trigger_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="dac_bd_1_AXI_Control_Registers_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_AXI_Control_Registers_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_AXI_Control_Registers_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_AXI_Control_Registers_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="dac_bd_1_BRAM_reader_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_BRAM_reader_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_BRAM_reader_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_BRAM_reader_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_BRAM_reader_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_BRAM_reader_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
@@ -491,6 +469,42 @@
     <Run Id="dac_bd_1_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_led_driver_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_led_driver_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_led_driver_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_AXI_Control_Registers_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_AXI_Control_Registers_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_AXI_Control_Registers_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_AXI_Control_Registers_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_LDAC_trigger_v2_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_LDAC_trigger_v2_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_LDAC_trigger_v2_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_LDAC_trigger_v2_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_v2_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_v2_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" Type="Ft3:Synth" SrcSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -584,23 +598,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="dac_bd_1_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_xbar_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_xbar_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_xbar_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
@@ -669,40 +666,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dac_bd_1_LDAC_trigger_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_LDAC_trigger_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_LDAC_trigger_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="dac_bd_1_AXI_Control_Registers_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_AXI_Control_Registers_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_AXI_Control_Registers_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="dac_bd_1_BRAM_reader_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_BRAM_reader_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_BRAM_reader_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_BRAM_reader_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_BRAM_reader_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
@@ -723,6 +686,63 @@
     <Run Id="dac_bd_1_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_led_driver_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_led_driver_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_AXI_Control_Registers_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_AXI_Control_Registers_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_AXI_Control_Registers_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_AXI_Control_Registers_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_LDAC_trigger_v2_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_LDAC_trigger_v2_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_LDAC_trigger_v2_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_v2_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_LDAC_trigger_v2_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="dac_bd_1_DAC_reset_clr_trigger_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dac_bd_1_DAC_reset_clr_trigger_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dac_bd_1_DAC_reset_clr_trigger_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

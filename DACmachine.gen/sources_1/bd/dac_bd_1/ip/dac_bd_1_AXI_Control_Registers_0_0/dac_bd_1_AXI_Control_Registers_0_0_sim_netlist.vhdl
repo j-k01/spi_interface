@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Jun  7 23:53:36 2025
+-- Date        : Mon Jun  9 13:14:34 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0_sim_netlist.vhdl
@@ -1514,13 +1514,13 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
       I3 => s00_axi_wvalid,
       O => \slv_reg_wren__2\
     );
-\slv_reg0_reg[0]\: unisim.vcomponents.FDRE
+\slv_reg0_reg[0]\: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
       CE => '1',
       D => \slv_reg0[0]_i_1_n_0\,
       Q => \^o_ldac_force_ctrl\,
-      R => p_0_in
+      S => p_0_in
     );
 \slv_reg4[15]_i_1\: unisim.vcomponents.LUT5
     generic map(

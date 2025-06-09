@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Jun  7 23:26:35 2025
+-- Date        : Mon Jun  9 13:15:56 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top dac_bd_1_system_ila_0_4 -prefix
 --               dac_bd_1_system_ila_0_4_ dac_bd_1_system_ila_0_4_stub.vhdl
@@ -40,7 +40,12 @@ entity dac_bd_1_system_ila_0_4 is
     probe21 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe22 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe23 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe24 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe24 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe25 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe26 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe27 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe28 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe29 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 
 end dac_bd_1_system_ila_0_4;
@@ -49,7 +54,7 @@ architecture stub of dac_bd_1_system_ila_0_4 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,probe0[31:0],probe1[0:0],probe2[31:0],probe3[0:0],probe4[0:0],probe5[2:0],probe6[0:0],probe7[0:0],probe8[0:0],probe9[31:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[31:0],probe15[0:0],probe16[3:0],probe17[0:0],probe18[0:0],probe19[0:0],probe20[0:0],probe21[0:0],probe22[0:0],probe23[31:0],probe24[0:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,probe0[31:0],probe1[0:0],probe2[31:0],probe3[0:0],probe4[0:0],probe5[2:0],probe6[0:0],probe7[0:0],probe8[0:0],probe9[31:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[31:0],probe15[0:0],probe16[3:0],probe17[0:0],probe18[0:0],probe19[0:0],probe20[0:0],probe21[0:0],probe22[0:0],probe23[31:0],probe24[0:0],probe25[0:0],probe26[0:0],probe27[0:0],probe28[0:0],probe29[0:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "bd_d378,Vivado 2023.1";
 begin

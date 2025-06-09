@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Jun  7 20:16:00 2025
+-- Date        : Mon Jun  9 15:53:16 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_DAC_reset_clr_trigger_0_0/dac_bd_1_DAC_reset_clr_trigger_0_0_sim_netlist.vhdl
@@ -21,8 +21,8 @@ entity dac_bd_1_DAC_reset_clr_trigger_0_0_DAC_reset_clr_trigger is
     O_CLR_N : out STD_LOGIC;
     I_PULSE_RESET : in STD_LOGIC;
     I_CLK : in STD_LOGIC;
-    I_PULSE_CLR : in STD_LOGIC;
-    I_RSTN : in STD_LOGIC
+    I_RSTN : in STD_LOGIC;
+    I_PULSE_CLR : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of dac_bd_1_DAC_reset_clr_trigger_0_0_DAC_reset_clr_trigger : entity is "DAC_reset_clr_trigger";
@@ -31,9 +31,8 @@ end dac_bd_1_DAC_reset_clr_trigger_0_0_DAC_reset_clr_trigger;
 architecture STRUCTURE of dac_bd_1_DAC_reset_clr_trigger_0_0_DAC_reset_clr_trigger is
   signal \^o_clr_n\ : STD_LOGIC;
   signal \^o_reset_n\ : STD_LOGIC;
-  signal clr_cnt : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal clr_cnt : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \clr_cnt[0]_i_1_n_0\ : STD_LOGIC;
-  signal \clr_cnt[1]_i_1_n_0\ : STD_LOGIC;
   signal clr_n_i_1_n_0 : STD_LOGIC;
   signal \reset_cnt[0]_i_1_n_0\ : STD_LOGIC;
   signal \reset_cnt[1]_i_1_n_0\ : STD_LOGIC;
@@ -42,8 +41,6 @@ architecture STRUCTURE of dac_bd_1_DAC_reset_clr_trigger_0_0_DAC_reset_clr_trigg
   signal reset_n_i_1_n_0 : STD_LOGIC;
   signal reset_n_i_2_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \clr_cnt[0]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \clr_cnt[1]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \reset_cnt[0]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \reset_cnt[1]_i_1\ : label is "soft_lutpair0";
 begin
@@ -54,19 +51,9 @@ begin
       INIT => X"2"
     )
         port map (
-      I0 => clr_cnt(1),
+      I0 => I_PULSE_CLR,
       I1 => clr_cnt(0),
       O => \clr_cnt[0]_i_1_n_0\
-    );
-\clr_cnt[1]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"98"
-    )
-        port map (
-      I0 => clr_cnt(1),
-      I1 => clr_cnt(0),
-      I2 => I_PULSE_CLR,
-      O => \clr_cnt[1]_i_1_n_0\
     );
 \clr_cnt_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -79,26 +66,14 @@ begin
       D => \clr_cnt[0]_i_1_n_0\,
       Q => clr_cnt(0)
     );
-\clr_cnt_reg[1]\: unisim.vcomponents.FDCE
+clr_n_i_1: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"BA"
     )
         port map (
-      C => I_CLK,
-      CE => '1',
-      CLR => reset_n_i_2_n_0,
-      D => \clr_cnt[1]_i_1_n_0\,
-      Q => clr_cnt(1)
-    );
-clr_n_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"EF44"
-    )
-        port map (
-      I0 => clr_cnt(1),
-      I1 => clr_cnt(0),
-      I2 => I_PULSE_CLR,
-      I3 => \^o_clr_n\,
+      I0 => clr_cnt(0),
+      I1 => I_PULSE_CLR,
+      I2 => \^o_clr_n\,
       O => clr_n_i_1_n_0
     );
 clr_n_reg: unisim.vcomponents.FDPE
@@ -114,7 +89,7 @@ clr_n_reg: unisim.vcomponents.FDPE
     );
 \reset_cnt[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"BA"
+      INIT => X"10"
     )
         port map (
       I0 => I_PULSE_RESET,
@@ -124,7 +99,7 @@ clr_n_reg: unisim.vcomponents.FDPE
     );
 \reset_cnt[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"40"
+      INIT => X"EA"
     )
         port map (
       I0 => I_PULSE_RESET,

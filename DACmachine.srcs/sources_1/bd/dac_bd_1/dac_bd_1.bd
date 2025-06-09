@@ -28,15 +28,15 @@
       "rst_ps7_0_100M": "",
       "spi_interface_0": "",
       "AXI_Configuration_Re_0": "",
-      "DAC_reset_clr_trigger_0": "",
       "axi_bram_ctrl_0": "",
       "axi_bram_ctrl_0_bram": "",
       "bram_dr_multiplexer_0": "",
-      "LDAC_trigger_0": "",
       "system_ila_0": "",
-      "AXI_Control_Registers_0": "",
       "BRAM_reader_0": "",
-      "led_driver_0": ""
+      "led_driver_0": "",
+      "AXI_Control_Registers_0": "",
+      "DAC_reset_clr_trigger_0": "",
+      "LDAC_trigger_v2_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2741,66 +2741,6 @@
         "xci_path": "ip\\dac_bd_1_AXI_Configuration_Re_0_0\\dac_bd_1_AXI_Configuration_Re_0_0.xci",
         "inst_hier_path": "AXI_Configuration_Re_0"
       },
-      "DAC_reset_clr_trigger_0": {
-        "vlnv": "xilinx.com:module_ref:DAC_reset_clr_trigger:1.0",
-        "xci_name": "dac_bd_1_DAC_reset_clr_trigger_0_0",
-        "xci_path": "ip\\dac_bd_1_DAC_reset_clr_trigger_0_0\\dac_bd_1_DAC_reset_clr_trigger_0_0.xci",
-        "inst_hier_path": "DAC_reset_clr_trigger_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "DAC_reset_clr_trigger",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "I_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "I_PULSE_RESET",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "dac_bd_1_processing_system7_0_1_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "I_RSTN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "I_PULSE_RESET": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "I_PULSE_CLR": {
-            "direction": "I",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "O_RESET_N": {
-            "direction": "O"
-          },
-          "O_CLR_N": {
-            "direction": "O"
-          }
-        }
-      },
       "axi_bram_ctrl_0": {
         "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
         "xci_name": "dac_bd_1_axi_bram_ctrl_0_0",
@@ -2967,77 +2907,6 @@
           }
         }
       },
-      "LDAC_trigger_0": {
-        "vlnv": "xilinx.com:module_ref:LDAC_trigger:1.0",
-        "xci_name": "dac_bd_1_LDAC_trigger_0_0",
-        "xci_path": "ip\\dac_bd_1_LDAC_trigger_0_0\\dac_bd_1_LDAC_trigger_0_0.xci",
-        "inst_hier_path": "LDAC_trigger_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "LDAC_trigger",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "I_CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "I_RSTN",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "dac_bd_1_processing_system7_0_1_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "I_RSTN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "I_PULSE_DAC": {
-            "direction": "I",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "I_BUSY_N": {
-            "direction": "I"
-          },
-          "I_FORCE": {
-            "direction": "I",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": "undef",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "O_LDAC": {
-            "direction": "O"
-          },
-          "O_LDAC_PRIMED": {
-            "direction": "O"
-          },
-          "O_LDAC_ON_COOLDOWN": {
-            "direction": "O"
-          }
-        }
-      },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
         "xci_name": "dac_bd_1_system_ila_0_4",
@@ -3051,7 +2920,7 @@
             "value": "NATIVE"
           },
           "C_NUM_OF_PROBES": {
-            "value": "25"
+            "value": "30"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
@@ -3095,6 +2964,21 @@
           "C_PROBE21_TYPE": {
             "value": "0"
           },
+          "C_PROBE25_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE26_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE27_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE28_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE29_TYPE": {
+            "value": "0"
+          },
           "C_PROBE2_TYPE": {
             "value": "0"
           },
@@ -3120,12 +3004,6 @@
             "value": "0"
           }
         }
-      },
-      "AXI_Control_Registers_0": {
-        "vlnv": "xilinx.com:user:AXI_Control_Registers:1.0",
-        "xci_name": "dac_bd_1_AXI_Control_Registers_0_0",
-        "xci_path": "ip\\dac_bd_1_AXI_Control_Registers_0_0\\dac_bd_1_AXI_Control_Registers_0_0.xci",
-        "inst_hier_path": "AXI_Control_Registers_0"
       },
       "BRAM_reader_0": {
         "vlnv": "xilinx.com:module_ref:BRAM_reader:1.0",
@@ -3257,6 +3135,133 @@
             "direction": "O",
             "left": "1",
             "right": "0"
+          }
+        }
+      },
+      "AXI_Control_Registers_0": {
+        "vlnv": "xilinx.com:user:AXI_Control_Registers:1.0",
+        "xci_name": "dac_bd_1_AXI_Control_Registers_0_0",
+        "xci_path": "ip\\dac_bd_1_AXI_Control_Registers_0_0\\dac_bd_1_AXI_Control_Registers_0_0.xci",
+        "inst_hier_path": "AXI_Control_Registers_0"
+      },
+      "DAC_reset_clr_trigger_0": {
+        "vlnv": "xilinx.com:module_ref:DAC_reset_clr_trigger:1.0",
+        "xci_name": "dac_bd_1_DAC_reset_clr_trigger_0_0",
+        "xci_path": "ip\\dac_bd_1_DAC_reset_clr_trigger_0_0\\dac_bd_1_DAC_reset_clr_trigger_0_0.xci",
+        "inst_hier_path": "DAC_reset_clr_trigger_0",
+        "parameters": {
+          "CLR_LOW_NS": {
+            "value": "1400"
+          },
+          "RESET_LOW_NS": {
+            "value": "1000"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DAC_reset_clr_trigger",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "I_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "I_PULSE_RESET",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "dac_bd_1_processing_system7_0_1_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "I_RSTN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_PULSE_RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "I_PULSE_CLR": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "O_RESET_N": {
+            "direction": "O"
+          },
+          "O_CLR_N": {
+            "direction": "O"
+          }
+        }
+      },
+      "LDAC_trigger_v2_0": {
+        "vlnv": "xilinx.com:module_ref:LDAC_trigger_v2:1.0",
+        "xci_name": "dac_bd_1_LDAC_trigger_v2_0_0",
+        "xci_path": "ip\\dac_bd_1_LDAC_trigger_v2_0_0\\dac_bd_1_LDAC_trigger_v2_0_0.xci",
+        "inst_hier_path": "LDAC_trigger_v2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LDAC_trigger_v2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "I_CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "I_RSTN",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "dac_bd_1_processing_system7_0_1_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "I_RSTN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "I_PULSE_LDAC": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "O_LDAC_N": {
+            "direction": "O"
           }
         }
       }
@@ -3419,12 +3424,6 @@
             "value": "true"
           }
         }
-      },
-      "AXI_Control_Registers_0_O_LDAC_FORCE_CTRL": {
-        "ports": [
-          "AXI_Control_Registers_0/O_LDAC_FORCE_CTRL",
-          "LDAC_trigger_0/I_FORCE"
-        ]
       },
       "AXI_Control_Registers_0_O_MACRO_CONFIG": {
         "ports": [
@@ -3609,26 +3608,61 @@
       "DAC_reset_clr_trigger_0_O_CLR_N": {
         "ports": [
           "DAC_reset_clr_trigger_0/O_CLR_N",
-          "O_CLR_N_0"
-        ]
+          "O_CLR_N_0",
+          "system_ila_0/probe27"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "DAC_reset_clr_trigger_0_O_RESET_N": {
         "ports": [
           "DAC_reset_clr_trigger_0/O_RESET_N",
-          "O_RESET_N_0"
-        ]
+          "O_RESET_N_0",
+          "system_ila_0/probe28"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "I_BUSY_N_0_1": {
         "ports": [
           "I_BUSY_N_0",
-          "LDAC_trigger_0/I_BUSY_N"
-        ]
+          "system_ila_0/probe25"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "LDAC_trigger_0_O_LDAC": {
         "ports": [
-          "LDAC_trigger_0/O_LDAC",
-          "O_LDAC_0"
-        ]
+          "LDAC_trigger_v2_0/O_LDAC_N",
+          "O_LDAC_0",
+          "system_ila_0/probe29"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "axi_bram_ctrl_0_bram_doutb": {
         "ports": [
@@ -3669,7 +3703,7 @@
       "bram_dr_multiplexer_0_ldac_req_out": {
         "ports": [
           "bram_dr_multiplexer_0/ldac_req_out",
-          "LDAC_trigger_0/I_PULSE_DAC"
+          "LDAC_trigger_v2_0/I_PULSE_LDAC"
         ]
       },
       "bram_dr_multiplexer_0_reset_req_out": {
@@ -3718,8 +3752,17 @@
         "ports": [
           "miso_0",
           "spi_interface_0/miso",
-          "led_driver_0/spi_miso"
-        ]
+          "led_driver_0/spi_miso",
+          "system_ila_0/probe26"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
@@ -3732,15 +3775,15 @@
           "spi_interface_0/clk",
           "AXI_Configuration_Re_0/s00_axi_aclk",
           "ps7_0_axi_periph/M01_ACLK",
-          "DAC_reset_clr_trigger_0/I_CLK",
           "axi_bram_ctrl_0/s_axi_aclk",
           "ps7_0_axi_periph/M02_ACLK",
           "axi_bram_ctrl_0_bram/clkb",
-          "LDAC_trigger_0/I_CLK",
           "system_ila_0/clk",
-          "AXI_Control_Registers_0/s00_axi_aclk",
           "BRAM_reader_0/clk",
-          "led_driver_0/clk"
+          "led_driver_0/clk",
+          "AXI_Control_Registers_0/s00_axi_aclk",
+          "DAC_reset_clr_trigger_0/I_CLK",
+          "LDAC_trigger_v2_0/I_CLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -3758,12 +3801,12 @@
           "spi_interface_0/rst_n",
           "AXI_Configuration_Re_0/s00_axi_aresetn",
           "ps7_0_axi_periph/M01_ARESETN",
-          "DAC_reset_clr_trigger_0/I_RSTN",
           "axi_bram_ctrl_0/s_axi_aresetn",
           "ps7_0_axi_periph/M02_ARESETN",
-          "LDAC_trigger_0/I_RSTN",
+          "BRAM_reader_0/rst_n",
           "AXI_Control_Registers_0/s00_axi_aresetn",
-          "BRAM_reader_0/rst_n"
+          "DAC_reset_clr_trigger_0/I_RSTN",
+          "LDAC_trigger_v2_0/I_RSTN"
         ]
       },
       "rst_ps7_0_100M_peripheral_reset": {

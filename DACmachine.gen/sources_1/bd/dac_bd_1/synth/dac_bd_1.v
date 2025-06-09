@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-//Date        : Sun Jun  8 03:03:03 2025
+//Date        : Mon Jun  9 15:52:10 2025
 //Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 //Command     : generate_target dac_bd_1.bd
 //Design      : dac_bd_1
@@ -88,7 +88,6 @@ module dac_bd_1
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]AXI_Configuration_Re_0_O_TX_DATA;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_CLR_CTRL;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_LDAC_CTRL;
-  wire AXI_Control_Registers_0_O_LDAC_FORCE_CTRL;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [2:0]AXI_Control_Registers_0_O_MACRO_CONFIG;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_MACRO_START;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_RST_CTRL;
@@ -101,10 +100,10 @@ module dac_bd_1
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]BRAM_reader_0_O_SPI_TRX;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire BRAM_reader_0_O_START_SPI;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]BRAM_reader_0_O_WE;
-  wire DAC_reset_clr_trigger_0_O_CLR_N;
-  wire DAC_reset_clr_trigger_0_O_RESET_N;
-  wire I_BUSY_N_0_1;
-  wire LDAC_trigger_0_O_LDAC;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire DAC_reset_clr_trigger_0_O_CLR_N;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire DAC_reset_clr_trigger_0_O_RESET_N;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire I_BUSY_N_0_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire LDAC_trigger_0_O_LDAC;
   wire [12:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DIN;
@@ -120,7 +119,7 @@ module dac_bd_1
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]bram_dr_multiplexer_0_spi_data_out;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire bram_dr_multiplexer_0_start_spi_out;
   wire [1:0]led_driver_0_leds;
-  wire miso_0_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire miso_0_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -308,7 +307,6 @@ module dac_bd_1
   dac_bd_1_AXI_Control_Registers_0_0 AXI_Control_Registers_0
        (.O_CLR_CTRL(AXI_Control_Registers_0_O_CLR_CTRL),
         .O_LDAC_CTRL(AXI_Control_Registers_0_O_LDAC_CTRL),
-        .O_LDAC_FORCE_CTRL(AXI_Control_Registers_0_O_LDAC_FORCE_CTRL),
         .O_MACRO_CONFIG(AXI_Control_Registers_0_O_MACRO_CONFIG),
         .O_MACRO_START(AXI_Control_Registers_0_O_MACRO_START),
         .O_RST_CTRL(AXI_Control_Registers_0_O_RST_CTRL),
@@ -356,13 +354,11 @@ module dac_bd_1
         .I_RSTN(rst_ps7_0_100M_peripheral_aresetn),
         .O_CLR_N(DAC_reset_clr_trigger_0_O_CLR_N),
         .O_RESET_N(DAC_reset_clr_trigger_0_O_RESET_N));
-  dac_bd_1_LDAC_trigger_0_0 LDAC_trigger_0
-       (.I_BUSY_N(I_BUSY_N_0_1),
-        .I_CLK(processing_system7_0_FCLK_CLK0),
-        .I_FORCE(AXI_Control_Registers_0_O_LDAC_FORCE_CTRL),
-        .I_PULSE_DAC(bram_dr_multiplexer_0_ldac_req_out),
+  dac_bd_1_LDAC_trigger_v2_0_0 LDAC_trigger_v2_0
+       (.I_CLK(processing_system7_0_FCLK_CLK0),
+        .I_PULSE_LDAC(bram_dr_multiplexer_0_ldac_req_out),
         .I_RSTN(rst_ps7_0_100M_peripheral_aresetn),
-        .O_LDAC(LDAC_trigger_0_O_LDAC));
+        .O_LDAC_N(LDAC_trigger_0_O_LDAC));
   (* BMM_INFO_ADDRESS_SPACE = "byte  0x40000000 32 > dac_bd_1 axi_bram_ctrl_0_bram" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   dac_bd_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
@@ -678,6 +674,11 @@ module dac_bd_1
         .probe22(bram_dr_multiplexer_0_O_BRAM_SPI_DONE),
         .probe23(bram_dr_multiplexer_0_spi_data_out),
         .probe24(bram_dr_multiplexer_0_start_spi_out),
+        .probe25(I_BUSY_N_0_1),
+        .probe26(miso_0_1),
+        .probe27(DAC_reset_clr_trigger_0_O_CLR_N),
+        .probe28(DAC_reset_clr_trigger_0_O_RESET_N),
+        .probe29(LDAC_trigger_0_O_LDAC),
         .probe3(AXI_Control_Registers_0_O_CLR_CTRL),
         .probe4(AXI_Control_Registers_0_O_LDAC_CTRL),
         .probe5(AXI_Control_Registers_0_O_MACRO_CONFIG),

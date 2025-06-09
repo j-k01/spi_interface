@@ -4,7 +4,7 @@
     "xci_name": "dac_bd_1_AXI_Control_Registers_0_0",
     "cell_name": "AXI_Control_Registers_0",
     "component_reference": "xilinx.com:user:AXI_Control_Registers:1.0",
-    "ip_revision": "4",
+    "ip_revision": "5",
     "gen_directory": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "4" } ],
+        "IPREVISION": [ { "value": "5" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

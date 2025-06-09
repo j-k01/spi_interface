@@ -79,7 +79,12 @@ module dac_bd_1_system_ila_0_4 (
   probe21,
   probe22,
   probe23,
-  probe24
+  probe24,
+  probe25,
+  probe26,
+  probe27,
+  probe28,
+  probe29
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *)
@@ -110,6 +115,11 @@ input wire [0 : 0] probe21;
 input wire [0 : 0] probe22;
 input wire [31 : 0] probe23;
 input wire [0 : 0] probe24;
+input wire [0 : 0] probe25;
+input wire [0 : 0] probe26;
+input wire [0 : 0] probe27;
+input wire [0 : 0] probe28;
+input wire [0 : 0] probe29;
 
   bd_d378 inst (
     .clk(clk),
@@ -137,6 +147,11 @@ input wire [0 : 0] probe24;
     .probe21(probe21),
     .probe22(probe22),
     .probe23(probe23),
-    .probe24(probe24)
+    .probe24(probe24),
+    .probe25(probe25),
+    .probe26(probe26),
+    .probe27(probe27),
+    .probe28(probe28),
+    .probe29(probe29)
   );
 endmodule

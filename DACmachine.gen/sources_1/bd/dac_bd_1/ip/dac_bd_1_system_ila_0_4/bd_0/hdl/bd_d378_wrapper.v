@@ -27,6 +27,11 @@ module bd_d378_wrapper
     probe22,
     probe23,
     probe24,
+    probe25,
+    probe26,
+    probe27,
+    probe28,
+    probe29,
     probe3,
     probe4,
     probe5,
@@ -53,6 +58,11 @@ module bd_d378_wrapper
   input [0:0]probe22;
   input [31:0]probe23;
   input [0:0]probe24;
+  input [0:0]probe25;
+  input [0:0]probe26;
+  input [0:0]probe27;
+  input [0:0]probe28;
+  input [0:0]probe29;
   input [0:0]probe3;
   input [0:0]probe4;
   input [2:0]probe5;
@@ -80,6 +90,11 @@ module bd_d378_wrapper
   wire [0:0]probe22;
   wire [31:0]probe23;
   wire [0:0]probe24;
+  wire [0:0]probe25;
+  wire [0:0]probe26;
+  wire [0:0]probe27;
+  wire [0:0]probe28;
+  wire [0:0]probe29;
   wire [0:0]probe3;
   wire [0:0]probe4;
   wire [2:0]probe5;
@@ -108,6 +123,11 @@ module bd_d378_wrapper
         .probe22(probe22),
         .probe23(probe23),
         .probe24(probe24),
+        .probe25(probe25),
+        .probe26(probe26),
+        .probe27(probe27),
+        .probe28(probe28),
+        .probe29(probe29),
         .probe3(probe3),
         .probe4(probe4),
         .probe5(probe5),
