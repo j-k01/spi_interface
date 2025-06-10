@@ -1,0 +1,45 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "dac_bd_1_chip_sel_mux_0_0",
+    "cell_name": "chip_sel_mux_0",
+    "component_reference": "xilinx.com:module_ref:chip_sel_mux:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_chip_sel_mux_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "dac_bd_1_chip_sel_mux_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "www.digilentinc.com:pynq-z1:part0:1.0" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg400" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_chip_sel_mux_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "I_CHIP_SEL_BITS": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "i_cs_n": [ { "direction": "in" } ],
+        "o_cs_n": [ { "direction": "out", "size_left": "3", "size_right": "0" } ]
+      }
+    }
+  }
+}

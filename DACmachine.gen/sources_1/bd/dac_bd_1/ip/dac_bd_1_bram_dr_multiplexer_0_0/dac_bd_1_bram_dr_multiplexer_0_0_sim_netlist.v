@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 // Date        : Sat Jun  7 22:52:38 2025
 // Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_bram_dr_multiplexer_0_0/dac_bd_1_bram_dr_multiplexer_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top dac_bd_1_bram_dr_multiplexer_0_0 -prefix
+//               dac_bd_1_bram_dr_multiplexer_0_0_ dac_bd_1_bram_dr_multiplexer_0_0_sim_netlist.v
 // Design      : dac_bd_1_bram_dr_multiplexer_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,108 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "dac_bd_1_bram_dr_multiplexer_0_0,bram_dr_multiplexer,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "bram_dr_multiplexer,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module dac_bd_1_bram_dr_multiplexer_0_0
-   (sel,
-    bram_spi_data,
-    bram_clear_req,
-    bram_ldac_req,
-    bram_reset_req,
-    bram_start_spi,
-    direct_spi_data,
-    direct_clear_req,
-    direct_ldac_req,
-    direct_reset_req,
-    direct_start_spi,
-    I_SPI_DONE,
-    spi_data_out,
-    clear_req_out,
-    ldac_req_out,
-    reset_req_out,
-    start_spi_out,
-    O_BRAM_SPI_DONE);
-  input sel;
-  input [31:0]bram_spi_data;
-  input bram_clear_req;
-  input bram_ldac_req;
-  input bram_reset_req;
-  input bram_start_spi;
-  input [31:0]direct_spi_data;
-  input direct_clear_req;
-  input direct_ldac_req;
-  input direct_reset_req;
-  input direct_start_spi;
-  input I_SPI_DONE;
-  output [31:0]spi_data_out;
-  output clear_req_out;
-  output ldac_req_out;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_req_out RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_req_out, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) output reset_req_out;
-  output start_spi_out;
-  output O_BRAM_SPI_DONE;
-
-  wire I_SPI_DONE;
-  wire O_BRAM_SPI_DONE;
-  wire bram_clear_req;
-  wire bram_ldac_req;
-  wire bram_reset_req;
-  wire [31:0]bram_spi_data;
-  wire bram_start_spi;
-  wire clear_req_out;
-  wire direct_clear_req;
-  wire direct_ldac_req;
-  wire direct_reset_req;
-  wire [31:0]direct_spi_data;
-  wire direct_start_spi;
-  wire ldac_req_out;
-  wire reset_req_out;
-  wire sel;
-  wire [31:0]spi_data_out;
-  wire start_spi_out;
-
-  LUT2 #(
-    .INIT(4'hB)) 
-    O_BRAM_SPI_DONE_INST_0
-       (.I0(I_SPI_DONE),
-        .I1(sel),
-        .O(O_BRAM_SPI_DONE));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    clear_req_out_INST_0
-       (.I0(bram_clear_req),
-        .I1(sel),
-        .I2(direct_clear_req),
-        .O(clear_req_out));
-  dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer inst
-       (.bram_spi_data(bram_spi_data),
-        .direct_spi_data(direct_spi_data),
-        .sel(sel),
-        .spi_data_out(spi_data_out));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    ldac_req_out_INST_0
-       (.I0(bram_ldac_req),
-        .I1(sel),
-        .I2(direct_ldac_req),
-        .O(ldac_req_out));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    reset_req_out_INST_0
-       (.I0(bram_reset_req),
-        .I1(sel),
-        .I2(direct_reset_req),
-        .O(reset_req_out));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    start_spi_out_INST_0
-       (.I0(bram_start_spi),
-        .I1(sel),
-        .I2(direct_start_spi),
-        .O(start_spi_out));
-endmodule
-
-(* ORIG_REF_NAME = "bram_dr_multiplexer" *) 
 module dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer
    (spi_data_out,
     bram_spi_data,
@@ -386,6 +284,107 @@ module dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer
         .I1(direct_spi_data[9]),
         .I2(sel),
         .O(spi_data_out[9]));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "dac_bd_1_bram_dr_multiplexer_0_0,bram_dr_multiplexer,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "bram_dr_multiplexer,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module dac_bd_1_bram_dr_multiplexer_0_0
+   (sel,
+    bram_spi_data,
+    bram_clear_req,
+    bram_ldac_req,
+    bram_reset_req,
+    bram_start_spi,
+    direct_spi_data,
+    direct_clear_req,
+    direct_ldac_req,
+    direct_reset_req,
+    direct_start_spi,
+    I_SPI_DONE,
+    spi_data_out,
+    clear_req_out,
+    ldac_req_out,
+    reset_req_out,
+    start_spi_out,
+    O_BRAM_SPI_DONE);
+  input sel;
+  input [31:0]bram_spi_data;
+  input bram_clear_req;
+  input bram_ldac_req;
+  input bram_reset_req;
+  input bram_start_spi;
+  input [31:0]direct_spi_data;
+  input direct_clear_req;
+  input direct_ldac_req;
+  input direct_reset_req;
+  input direct_start_spi;
+  input I_SPI_DONE;
+  output [31:0]spi_data_out;
+  output clear_req_out;
+  output ldac_req_out;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_req_out RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_req_out, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) output reset_req_out;
+  output start_spi_out;
+  output O_BRAM_SPI_DONE;
+
+  wire I_SPI_DONE;
+  wire O_BRAM_SPI_DONE;
+  wire bram_clear_req;
+  wire bram_ldac_req;
+  wire bram_reset_req;
+  wire [31:0]bram_spi_data;
+  wire bram_start_spi;
+  wire clear_req_out;
+  wire direct_clear_req;
+  wire direct_ldac_req;
+  wire direct_reset_req;
+  wire [31:0]direct_spi_data;
+  wire direct_start_spi;
+  wire ldac_req_out;
+  wire reset_req_out;
+  wire sel;
+  wire [31:0]spi_data_out;
+  wire start_spi_out;
+
+  LUT2 #(
+    .INIT(4'hB)) 
+    O_BRAM_SPI_DONE_INST_0
+       (.I0(I_SPI_DONE),
+        .I1(sel),
+        .O(O_BRAM_SPI_DONE));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    clear_req_out_INST_0
+       (.I0(bram_clear_req),
+        .I1(sel),
+        .I2(direct_clear_req),
+        .O(clear_req_out));
+  dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer inst
+       (.bram_spi_data(bram_spi_data),
+        .direct_spi_data(direct_spi_data),
+        .sel(sel),
+        .spi_data_out(spi_data_out));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    ldac_req_out_INST_0
+       (.I0(bram_ldac_req),
+        .I1(sel),
+        .I2(direct_ldac_req),
+        .O(ldac_req_out));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    reset_req_out_INST_0
+       (.I0(bram_reset_req),
+        .I1(sel),
+        .I2(direct_reset_req),
+        .O(reset_req_out));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    start_spi_out_INST_0
+       (.I0(bram_start_spi),
+        .I1(sel),
+        .I2(direct_start_spi),
+        .O(start_spi_out));
 endmodule
 `ifndef GLBL
 `define GLBL

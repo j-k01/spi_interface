@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun  9 15:52:13 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jun 10 11:49:49 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="dac_bd_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -119,11 +119,6 @@
         <CONNECTION INSTANCE="spi_interface_0" PORT="mosi"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ss_n_0" SIGIS="undef" SIGNAME="spi_interface_0_ss_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_interface_0" PORT="ss_n"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="miso_0" SIGIS="undef" SIGNAME="External_Ports_miso_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_interface_0" PORT="miso"/>
@@ -146,19 +141,24 @@
         <CONNECTION INSTANCE="LDAC_trigger_v2_0" PORT="O_LDAC_N"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="O_RESET_N_0" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_RESET_N">
+    <PORT DIR="O" NAME="O_RESET_N_0" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_RESET_N">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="O_RESET_N"/>
+        <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="O_RESET_N"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="O_CLR_N_0" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_CLR_N">
+    <PORT DIR="O" NAME="O_CLR_N_0" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_CLR_N">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="O_CLR_N"/>
+        <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="O_CLR_N"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="1" NAME="leds_0" RIGHT="0" SIGIS="undef" SIGNAME="led_driver_0_leds">
       <CONNECTIONS>
         <CONNECTION INSTANCE="led_driver_0" PORT="leds"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="o_cs_n_0" RIGHT="0" SIGIS="undef" SIGNAME="chip_sel_mux_0_o_cs_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="chip_sel_mux_0" PORT="o_cs_n"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -457,7 +457,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/AXI_Control_Registers_0" HWVERSION="1.0" INSTANCE="AXI_Control_Registers_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI_Control_Registers" VLNV="xilinx.com:user:AXI_Control_Registers:1.0">
+    <MODULE COREREVISION="6" FULLNAME="/AXI_Control_Registers_0" HWVERSION="1.0" INSTANCE="AXI_Control_Registers_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI_Control_Registers" VLNV="xilinx.com:user:AXI_Control_Registers:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -613,6 +613,11 @@
             <CONNECTION INSTANCE="system_ila_0" PORT="probe8"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="1" NAME="O_CHIP_MUX_SEL" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Control_Registers_0_O_CHIP_MUX_SEL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="chip_sel_mux_0" PORT="I_CHIP_SEL_BITS"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -756,51 +761,6 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="bram_dr_multiplexer_0" PORT="bram_reset_req"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe13"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/DAC_reset_clr_trigger_0" HWVERSION="1.0" INSTANCE="DAC_reset_clr_trigger_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DAC_reset_clr_trigger" VLNV="xilinx.com:module_ref:DAC_reset_clr_trigger:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="CLK_HZ" VALUE="100000000"/>
-        <PARAMETER NAME="RESET_LOW_NS" VALUE="1000"/>
-        <PARAMETER NAME="CLR_LOW_NS" VALUE="1400"/>
-        <PARAMETER NAME="Component_Name" VALUE="dac_bd_1_DAC_reset_clr_trigger_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="I_CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="I_RSTN" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="I_PULSE_RESET" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="bram_dr_multiplexer_0_reset_req_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="bram_dr_multiplexer_0" PORT="reset_req_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="I_PULSE_CLR" SIGIS="undef" SIGNAME="bram_dr_multiplexer_0_clear_req_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="bram_dr_multiplexer_0" PORT="clear_req_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="O_RESET_N" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_RESET_N">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="O_RESET_N_0"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe28"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="O_CLR_N" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_CLR_N">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="O_CLR_N_0"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe27"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1811,7 +1771,7 @@
         </PORT>
         <PORT DIR="O" NAME="clear_req_out" SIGIS="undef" SIGNAME="bram_dr_multiplexer_0_clear_req_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="I_PULSE_CLR"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="I_PULSE_CLR"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ldac_req_out" SIGIS="undef" SIGNAME="bram_dr_multiplexer_0_ldac_req_out">
@@ -1821,7 +1781,7 @@
         </PORT>
         <PORT DIR="O" NAME="reset_req_out" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="bram_dr_multiplexer_0_reset_req_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="I_PULSE_RESET"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="I_PULSE_RESET"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="start_spi_out" SIGIS="undef" SIGNAME="bram_dr_multiplexer_0_start_spi_out">
@@ -1834,6 +1794,31 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe22"/>
             <CONNECTION INSTANCE="BRAM_reader_0" PORT="I_SPI_DONE"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/chip_sel_mux_0" HWVERSION="1.0" INSTANCE="chip_sel_mux_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="chip_sel_mux" VLNV="xilinx.com:module_ref:chip_sel_mux:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="dac_bd_1_chip_sel_mux_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1" NAME="I_CHIP_SEL_BITS" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Control_Registers_0_O_CHIP_MUX_SEL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_Control_Registers_0" PORT="O_CHIP_MUX_SEL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_cs_n" SIGIS="undef" SIGNAME="spi_interface_0_ss_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_interface_0" PORT="ss_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="o_cs_n" RIGHT="0" SIGIS="undef" SIGNAME="chip_sel_mux_0_o_cs_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_cs_n_0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3025,9 +3010,9 @@
             <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="BRAM_reader_0" PORT="clk"/>
             <CONNECTION INSTANCE="led_driver_0" PORT="clk"/>
-            <CONNECTION INSTANCE="AXI_Control_Registers_0" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="I_CLK"/>
             <CONNECTION INSTANCE="LDAC_trigger_v2_0" PORT="I_CLK"/>
+            <CONNECTION INSTANCE="AXI_Control_Registers_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="I_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -4321,6 +4306,50 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/reset_clr_trigger_0" HWVERSION="1.0" INSTANCE="reset_clr_trigger_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reset_clr_trigger" VLNV="xilinx.com:module_ref:reset_clr_trigger:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="RESET_CLKS" VALUE="20"/>
+        <PARAMETER NAME="CLR_CLKS" VALUE="20"/>
+        <PARAMETER NAME="Component_Name" VALUE="dac_bd_1_reset_clr_trigger_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="I_CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I_RSTN" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I_PULSE_RESET" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="bram_dr_multiplexer_0_reset_req_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bram_dr_multiplexer_0" PORT="reset_req_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I_PULSE_CLR" SIGIS="undef" SIGNAME="bram_dr_multiplexer_0_clear_req_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bram_dr_multiplexer_0" PORT="clear_req_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O_RESET_N" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_RESET_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="O_RESET_N_0"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="probe28"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O_CLR_N" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_CLR_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="O_CLR_N_0"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="probe27"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/rst_ps7_0_100M" HWVERSION="5.0" INSTANCE="rst_ps7_0_100M" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
@@ -4373,9 +4402,9 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="BRAM_reader_0" PORT="rst_n"/>
-            <CONNECTION INSTANCE="AXI_Control_Registers_0" PORT="s00_axi_aresetn"/>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="I_RSTN"/>
             <CONNECTION INSTANCE="LDAC_trigger_v2_0" PORT="I_RSTN"/>
+            <CONNECTION INSTANCE="AXI_Control_Registers_0" PORT="s00_axi_aresetn"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="I_RSTN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4446,8 +4475,8 @@
         </PORT>
         <PORT DIR="O" NAME="ss_n" SIGIS="undef" SIGNAME="spi_interface_0_ss_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ss_n_0"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="probe21"/>
+            <CONNECTION INSTANCE="chip_sel_mux_0" PORT="i_cs_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="spi_mode" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Configuration_Re_0_O_SPI_MODE">
@@ -8475,14 +8504,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="miso_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe27" RIGHT="0" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_CLR_N">
+        <PORT DIR="I" LEFT="0" NAME="probe27" RIGHT="0" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_CLR_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="O_CLR_N"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="O_CLR_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe28" RIGHT="0" SIGIS="undef" SIGNAME="DAC_reset_clr_trigger_0_O_RESET_N">
+        <PORT DIR="I" LEFT="0" NAME="probe28" RIGHT="0" SIGIS="undef" SIGNAME="reset_clr_trigger_0_O_RESET_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_reset_clr_trigger_0" PORT="O_RESET_N"/>
+            <CONNECTION INSTANCE="reset_clr_trigger_0" PORT="O_RESET_N"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="probe29" RIGHT="0" SIGIS="undef" SIGNAME="LDAC_trigger_v2_0_O_LDAC_N">

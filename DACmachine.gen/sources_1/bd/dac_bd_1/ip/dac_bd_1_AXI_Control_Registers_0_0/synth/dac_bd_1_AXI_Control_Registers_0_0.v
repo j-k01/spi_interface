@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:AXI_Control_Registers:1.0
-// IP Revision: 5
+// IP Revision: 6
 
 (* X_CORE_INFO = "AXI_Control_Registers_v1_0,Vivado 2023.1" *)
 (* CHECK_LICENSE_TYPE = "dac_bd_1_AXI_Control_Registers_0_0,AXI_Control_Registers_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "dac_bd_1_AXI_Control_Registers_0_0,AXI_Control_Registers_v1_0,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI_Control_Registers,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}" *)
+(* CORE_GENERATION_INFO = "dac_bd_1_AXI_Control_Registers_0_0,AXI_Control_Registers_v1_0,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI_Control_Registers,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module dac_bd_1_AXI_Control_Registers_0_0 (
   s00_axi_aclk,
@@ -82,7 +82,8 @@ module dac_bd_1_AXI_Control_Registers_0_0 (
   O_LDAC_FORCE_CTRL,
   O_MACRO_CONFIG,
   O_MACRO_START,
-  O_SOURCE_SELECT
+  O_SOURCE_SELECT,
+  O_CHIP_MUX_SEL
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *)
@@ -152,6 +153,7 @@ output wire O_MACRO_START;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SOURCE_SELECT, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SOURCE_SELECT DATA" *)
 output wire O_SOURCE_SELECT;
+output wire [1 : 0] O_CHIP_MUX_SEL;
 
   AXI_Control_Registers_v1_0 #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
@@ -184,6 +186,7 @@ output wire O_SOURCE_SELECT;
     .O_LDAC_FORCE_CTRL(O_LDAC_FORCE_CTRL),
     .O_MACRO_CONFIG(O_MACRO_CONFIG),
     .O_MACRO_START(O_MACRO_START),
-    .O_SOURCE_SELECT(O_SOURCE_SELECT)
+    .O_SOURCE_SELECT(O_SOURCE_SELECT),
+    .O_CHIP_MUX_SEL(O_CHIP_MUX_SEL)
   );
 endmodule

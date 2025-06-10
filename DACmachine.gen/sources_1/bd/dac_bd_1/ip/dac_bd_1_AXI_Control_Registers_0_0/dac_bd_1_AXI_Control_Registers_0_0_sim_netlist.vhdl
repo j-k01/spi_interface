@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Mon Jun  9 13:14:34 2025
+-- Date        : Tue Jun 10 11:17:08 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top dac_bd_1_AXI_Control_Registers_0_0 -prefix
+--               dac_bd_1_AXI_Control_Registers_0_0_ dac_bd_1_AXI_Control_Registers_0_0_sim_netlist.vhdl
 -- Design      : dac_bd_1_AXI_Control_Registers_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,6 +25,7 @@ entity dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI is
     O_MACRO_CONFIG : out STD_LOGIC_VECTOR ( 2 downto 0 );
     O_MACRO_START : out STD_LOGIC;
     O_SOURCE_SELECT : out STD_LOGIC;
+    O_CHIP_MUX_SEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_ARREADY : out STD_LOGIC;
     O_LDAC_FORCE_CTRL : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -42,11 +43,10 @@ entity dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI : entity is "AXI_Control_Registers_v1_0_S00_AXI";
 end dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI;
 
 architecture STRUCTURE of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI is
+  signal \^o_chip_mux_sel\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^o_ldac_force_ctrl\ : STD_LOGIC;
   signal \^o_macro_config\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \^o_source_select\ : STD_LOGIC;
@@ -118,11 +118,11 @@ architecture STRUCTURE of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registe
   signal \slv_reg5[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg5[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg5[31]_i_1_n_0\ : STD_LOGIC;
-  signal slv_reg6 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal slv_reg6 : STD_LOGIC_VECTOR ( 31 downto 2 );
   signal \slv_reg6[15]_i_1_n_0\ : STD_LOGIC;
+  signal \slv_reg6[1]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg6[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg6[31]_i_1_n_0\ : STD_LOGIC;
-  signal \slv_reg6[7]_i_1_n_0\ : STD_LOGIC;
   signal slv_reg7 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \slv_reg7[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg7[23]_i_1_n_0\ : STD_LOGIC;
@@ -170,6 +170,7 @@ architecture STRUCTURE of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registe
   attribute SOFT_HLUTNM of macro_start_reg_i_1 : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of rst_pulse_reg_i_1 : label is "soft_lutpair2";
 begin
+  O_CHIP_MUX_SEL(1 downto 0) <= \^o_chip_mux_sel\(1 downto 0);
   O_LDAC_FORCE_CTRL <= \^o_ldac_force_ctrl\;
   O_MACRO_CONFIG(2 downto 0) <= \^o_macro_config\(2 downto 0);
   O_SOURCE_SELECT <= \^o_source_select\;
@@ -402,7 +403,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => slv_reg7(0),
-      I1 => slv_reg6(0),
+      I1 => \^o_chip_mux_sel\(0),
       I2 => sel0(1),
       I3 => \^o_source_select\,
       I4 => sel0(0),
@@ -644,7 +645,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => slv_reg7(1),
-      I1 => slv_reg6(1),
+      I1 => \^o_chip_mux_sel\(1),
       I2 => sel0(1),
       I3 => slv_reg5(1),
       I4 => sel0(0),
@@ -2142,6 +2143,18 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
       I4 => p_0_in_0(0),
       O => \slv_reg6[15]_i_1_n_0\
     );
+\slv_reg6[1]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00008000"
+    )
+        port map (
+      I0 => \slv_reg_wren__2\,
+      I1 => s00_axi_wstrb(0),
+      I2 => p_0_in_0(2),
+      I3 => p_0_in_0(1),
+      I4 => p_0_in_0(0),
+      O => \slv_reg6[1]_i_1_n_0\
+    );
 \slv_reg6[23]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00008000"
@@ -2166,24 +2179,12 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
       I4 => p_0_in_0(0),
       O => \slv_reg6[31]_i_1_n_0\
     );
-\slv_reg6[7]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00008000"
-    )
-        port map (
-      I0 => \slv_reg_wren__2\,
-      I1 => s00_axi_wstrb(0),
-      I2 => p_0_in_0(2),
-      I3 => p_0_in_0(1),
-      I4 => p_0_in_0(0),
-      O => \slv_reg6[7]_i_1_n_0\
-    );
 \slv_reg6_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(0),
-      Q => slv_reg6(0),
+      Q => \^o_chip_mux_sel\(0),
       R => p_0_in
     );
 \slv_reg6_reg[10]\: unisim.vcomponents.FDRE
@@ -2269,9 +2270,9 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(1),
-      Q => slv_reg6(1),
+      Q => \^o_chip_mux_sel\(1),
       R => p_0_in
     );
 \slv_reg6_reg[20]\: unisim.vcomponents.FDRE
@@ -2357,7 +2358,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(2),
       Q => slv_reg6(2),
       R => p_0_in
@@ -2381,7 +2382,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(3),
       Q => slv_reg6(3),
       R => p_0_in
@@ -2389,7 +2390,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(4),
       Q => slv_reg6(4),
       R => p_0_in
@@ -2397,7 +2398,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(5),
       Q => slv_reg6(5),
       R => p_0_in
@@ -2405,7 +2406,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(6),
       Q => slv_reg6(6),
       R => p_0_in
@@ -2413,7 +2414,7 @@ rst_pulse_reg_reg: unisim.vcomponents.FDRE
 \slv_reg6_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \slv_reg6[7]_i_1_n_0\,
+      CE => \slv_reg6[1]_i_1_n_0\,
       D => s00_axi_wdata(7),
       Q => slv_reg6(7),
       R => p_0_in
@@ -2763,6 +2764,7 @@ entity dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0 is
     O_MACRO_CONFIG : out STD_LOGIC_VECTOR ( 2 downto 0 );
     O_MACRO_START : out STD_LOGIC;
     O_SOURCE_SELECT : out STD_LOGIC;
+    O_CHIP_MUX_SEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_ARREADY : out STD_LOGIC;
     O_LDAC_FORCE_CTRL : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -2780,14 +2782,13 @@ entity dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0 : entity is "AXI_Control_Registers_v1_0";
 end dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0;
 
 architecture STRUCTURE of dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0 is
 begin
 AXI_Control_Registers_v1_0_S00_AXI_inst: entity work.dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0_S00_AXI
      port map (
+      O_CHIP_MUX_SEL(1 downto 0) => O_CHIP_MUX_SEL(1 downto 0),
       O_CLR_CTRL => O_CLR_CTRL,
       O_LDAC_CTRL => O_LDAC_CTRL,
       O_LDAC_FORCE_CTRL => O_LDAC_FORCE_CTRL,
@@ -2847,7 +2848,8 @@ entity dac_bd_1_AXI_Control_Registers_0_0 is
     O_LDAC_FORCE_CTRL : out STD_LOGIC;
     O_MACRO_CONFIG : out STD_LOGIC_VECTOR ( 2 downto 0 );
     O_MACRO_START : out STD_LOGIC;
-    O_SOURCE_SELECT : out STD_LOGIC
+    O_SOURCE_SELECT : out STD_LOGIC;
+    O_CHIP_MUX_SEL : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of dac_bd_1_AXI_Control_Registers_0_0 : entity is true;
@@ -2912,6 +2914,7 @@ GND: unisim.vcomponents.GND
     );
 inst: entity work.dac_bd_1_AXI_Control_Registers_0_0_AXI_Control_Registers_v1_0
      port map (
+      O_CHIP_MUX_SEL(1 downto 0) => O_CHIP_MUX_SEL(1 downto 0),
       O_CLR_CTRL => O_CLR_CTRL,
       O_LDAC_CTRL => O_LDAC_CTRL,
       O_LDAC_FORCE_CTRL => O_LDAC_FORCE_CTRL,

@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-//Date        : Sun Jun  8 00:39:16 2025
+//Date        : Tue Jun 10 11:49:24 2025
 //Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 //Command     : generate_target dac_bd_1.bd
 //Design      : dac_bd_1
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "dac_bd_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=dac_bd_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=4,da_ps7_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "dac_bd_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "dac_bd_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=dac_bd_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=23,numReposBlks=18,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=4,da_ps7_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "dac_bd_1.hwdef" *) 
 module dac_bd_1
    (DDR_addr,
     DDR_ba,
@@ -38,10 +38,11 @@ module dac_bd_1
     O_LDAC_0,
     O_RESET_N_0,
     busy_0,
+    leds_0,
     miso_0,
     mosi_0,
-    sclk_0,
-    ss_n_0);
+    o_cs_n_0,
+    sclk_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -68,10 +69,11 @@ module dac_bd_1
   output O_LDAC_0;
   output O_RESET_N_0;
   output busy_0;
+  output [1:0]leds_0;
   input miso_0;
   output mosi_0;
+  output [3:0]o_cs_n_0;
   output sclk_0;
-  output ss_n_0;
 
   wire [15:0]AXI_Configuration_Re_0_O_BITS_PER_TRANSACTION;
   wire [15:0]AXI_Configuration_Re_0_O_CS_HOLD_TIME;
@@ -84,9 +86,9 @@ module dac_bd_1
   wire [1:0]AXI_Configuration_Re_0_O_SPI_MODE;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Configuration_Re_0_O_START;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]AXI_Configuration_Re_0_O_TX_DATA;
+  wire [1:0]AXI_Control_Registers_0_O_CHIP_MUX_SEL;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_CLR_CTRL;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_LDAC_CTRL;
-  wire AXI_Control_Registers_0_O_LDAC_FORCE_CTRL;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [2:0]AXI_Control_Registers_0_O_MACRO_CONFIG;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_MACRO_START;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire AXI_Control_Registers_0_O_RST_CTRL;
@@ -99,10 +101,10 @@ module dac_bd_1
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]BRAM_reader_0_O_SPI_TRX;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire BRAM_reader_0_O_START_SPI;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]BRAM_reader_0_O_WE;
-  wire DAC_reset_clr_trigger_0_O_CLR_N;
-  wire DAC_reset_clr_trigger_0_O_RESET_N;
-  wire I_BUSY_N_0_1;
-  wire LDAC_trigger_0_O_LDAC;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire DAC_reset_clr_trigger_0_O_CLR_N;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire DAC_reset_clr_trigger_0_O_RESET_N;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire I_BUSY_N_0_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire LDAC_trigger_0_O_LDAC;
   wire [12:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DIN;
@@ -117,7 +119,9 @@ module dac_bd_1
   wire bram_dr_multiplexer_0_reset_req_out;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]bram_dr_multiplexer_0_spi_data_out;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire bram_dr_multiplexer_0_start_spi_out;
-  wire miso_0_1;
+  wire [3:0]chip_sel_mux_0_o_cs_n;
+  wire [1:0]led_driver_0_leds;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire miso_0_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -262,10 +266,11 @@ module dac_bd_1
   assign O_LDAC_0 = LDAC_trigger_0_O_LDAC;
   assign O_RESET_N_0 = DAC_reset_clr_trigger_0_O_RESET_N;
   assign busy_0 = spi_interface_0_busy;
+  assign leds_0[1:0] = led_driver_0_leds;
   assign miso_0_1 = miso_0;
   assign mosi_0 = spi_interface_0_mosi;
+  assign o_cs_n_0[3:0] = chip_sel_mux_0_o_cs_n;
   assign sclk_0 = spi_interface_0_sclk;
-  assign ss_n_0 = spi_interface_0_ss_n;
   dac_bd_1_AXI_Configuration_Re_0_0 AXI_Configuration_Re_0
        (.I_DONE(spi_interface_0_done),
         .I_RX_DATA(spi_interface_0_data_out),
@@ -302,9 +307,9 @@ module dac_bd_1
         .s00_axi_wstrb(ps7_0_axi_periph_M00_AXI_WSTRB),
         .s00_axi_wvalid(ps7_0_axi_periph_M00_AXI_WVALID));
   dac_bd_1_AXI_Control_Registers_0_0 AXI_Control_Registers_0
-       (.O_CLR_CTRL(AXI_Control_Registers_0_O_CLR_CTRL),
+       (.O_CHIP_MUX_SEL(AXI_Control_Registers_0_O_CHIP_MUX_SEL),
+        .O_CLR_CTRL(AXI_Control_Registers_0_O_CLR_CTRL),
         .O_LDAC_CTRL(AXI_Control_Registers_0_O_LDAC_CTRL),
-        .O_LDAC_FORCE_CTRL(AXI_Control_Registers_0_O_LDAC_FORCE_CTRL),
         .O_MACRO_CONFIG(AXI_Control_Registers_0_O_MACRO_CONFIG),
         .O_MACRO_START(AXI_Control_Registers_0_O_MACRO_START),
         .O_RST_CTRL(AXI_Control_Registers_0_O_RST_CTRL),
@@ -345,20 +350,11 @@ module dac_bd_1
         .O_WE(BRAM_reader_0_O_WE),
         .clk(processing_system7_0_FCLK_CLK0),
         .rst_n(rst_ps7_0_100M_peripheral_aresetn));
-  dac_bd_1_DAC_reset_clr_trigger_0_0 DAC_reset_clr_trigger_0
+  dac_bd_1_LDAC_trigger_v2_0_0 LDAC_trigger_v2_0
        (.I_CLK(processing_system7_0_FCLK_CLK0),
-        .I_PULSE_CLR(bram_dr_multiplexer_0_clear_req_out),
-        .I_PULSE_RESET(bram_dr_multiplexer_0_reset_req_out),
+        .I_PULSE_LDAC(bram_dr_multiplexer_0_ldac_req_out),
         .I_RSTN(rst_ps7_0_100M_peripheral_aresetn),
-        .O_CLR_N(DAC_reset_clr_trigger_0_O_CLR_N),
-        .O_RESET_N(DAC_reset_clr_trigger_0_O_RESET_N));
-  dac_bd_1_LDAC_trigger_0_0 LDAC_trigger_0
-       (.I_BUSY_N(I_BUSY_N_0_1),
-        .I_CLK(processing_system7_0_FCLK_CLK0),
-        .I_FORCE(AXI_Control_Registers_0_O_LDAC_FORCE_CTRL),
-        .I_PULSE_DAC(bram_dr_multiplexer_0_ldac_req_out),
-        .I_RSTN(rst_ps7_0_100M_peripheral_aresetn),
-        .O_LDAC(LDAC_trigger_0_O_LDAC));
+        .O_LDAC_N(LDAC_trigger_0_O_LDAC));
   (* BMM_INFO_ADDRESS_SPACE = "byte  0x40000000 32 > dac_bd_1 axi_bram_ctrl_0_bram" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   dac_bd_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
@@ -436,6 +432,15 @@ module dac_bd_1
         .sel(AXI_Control_Registers_0_O_SOURCE_SELECT),
         .spi_data_out(bram_dr_multiplexer_0_spi_data_out),
         .start_spi_out(bram_dr_multiplexer_0_start_spi_out));
+  dac_bd_1_chip_sel_mux_0_0 chip_sel_mux_0
+       (.I_CHIP_SEL_BITS(AXI_Control_Registers_0_O_CHIP_MUX_SEL),
+        .i_cs_n(spi_interface_0_ss_n),
+        .o_cs_n(chip_sel_mux_0_o_cs_n));
+  dac_bd_1_led_driver_0_0 led_driver_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .leds(led_driver_0_leds),
+        .spi_miso(miso_0_1),
+        .spi_mosi(spi_interface_0_mosi));
   (* BMM_INFO_PROCESSOR = "arm > dac_bd_1 axi_bram_ctrl_0" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   dac_bd_1_processing_system7_0_1 processing_system7_0
@@ -620,6 +625,13 @@ module dac_bd_1
         .S00_AXI_wready(processing_system7_0_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(processing_system7_0_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID));
+  dac_bd_1_reset_clr_trigger_0_0 reset_clr_trigger_0
+       (.I_CLK(processing_system7_0_FCLK_CLK0),
+        .I_PULSE_CLR(bram_dr_multiplexer_0_clear_req_out),
+        .I_PULSE_RESET(bram_dr_multiplexer_0_reset_req_out),
+        .I_RSTN(rst_ps7_0_100M_peripheral_aresetn),
+        .O_CLR_N(DAC_reset_clr_trigger_0_O_CLR_N),
+        .O_RESET_N(DAC_reset_clr_trigger_0_O_RESET_N));
   dac_bd_1_rst_ps7_0_100M_0 rst_ps7_0_100M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -669,6 +681,11 @@ module dac_bd_1
         .probe22(bram_dr_multiplexer_0_O_BRAM_SPI_DONE),
         .probe23(bram_dr_multiplexer_0_spi_data_out),
         .probe24(bram_dr_multiplexer_0_start_spi_out),
+        .probe25(I_BUSY_N_0_1),
+        .probe26(miso_0_1),
+        .probe27(DAC_reset_clr_trigger_0_O_CLR_N),
+        .probe28(DAC_reset_clr_trigger_0_O_RESET_N),
+        .probe29(LDAC_trigger_0_O_LDAC),
         .probe3(AXI_Control_Registers_0_O_CLR_CTRL),
         .probe4(AXI_Control_Registers_0_O_LDAC_CTRL),
         .probe5(AXI_Control_Registers_0_O_MACRO_CONFIG),

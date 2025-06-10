@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Mon Jun  9 13:14:34 2025
+-- Date        : Tue Jun 10 11:17:08 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top dac_bd_1_AXI_Control_Registers_0_0 -prefix
+--               dac_bd_1_AXI_Control_Registers_0_0_ dac_bd_1_AXI_Control_Registers_0_0_stub.vhdl
 -- Design      : dac_bd_1_AXI_Control_Registers_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
@@ -42,7 +42,8 @@ entity dac_bd_1_AXI_Control_Registers_0_0 is
     O_LDAC_FORCE_CTRL : out STD_LOGIC;
     O_MACRO_CONFIG : out STD_LOGIC_VECTOR ( 2 downto 0 );
     O_MACRO_START : out STD_LOGIC;
-    O_SOURCE_SELECT : out STD_LOGIC
+    O_SOURCE_SELECT : out STD_LOGIC;
+    O_CHIP_MUX_SEL : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
 
 end dac_bd_1_AXI_Control_Registers_0_0;
@@ -51,7 +52,7 @@ architecture stub of dac_bd_1_AXI_Control_Registers_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,O_LDAC_CTRL,O_RST_CTRL,O_CLR_CTRL,O_LDAC_FORCE_CTRL,O_MACRO_CONFIG[2:0],O_MACRO_START,O_SOURCE_SELECT";
+attribute black_box_pad_pin of stub : architecture is "s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,O_LDAC_CTRL,O_RST_CTRL,O_CLR_CTRL,O_LDAC_FORCE_CTRL,O_MACRO_CONFIG[2:0],O_MACRO_START,O_SOURCE_SELECT,O_CHIP_MUX_SEL[1:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "AXI_Control_Registers_v1_0,Vivado 2023.1";
 begin

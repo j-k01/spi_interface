@@ -4,7 +4,7 @@
     "xci_name": "dac_bd_1_AXI_Control_Registers_0_0",
     "cell_name": "AXI_Control_Registers_0",
     "component_reference": "xilinx.com:user:AXI_Control_Registers:1.0",
-    "ip_revision": "5",
+    "ip_revision": "6",
     "gen_directory": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "5" } ],
+        "IPREVISION": [ { "value": "6" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -71,7 +71,8 @@
         "O_LDAC_FORCE_CTRL": [ { "direction": "out" } ],
         "O_MACRO_CONFIG": [ { "direction": "out", "size_left": "2", "size_right": "0" } ],
         "O_MACRO_START": [ { "direction": "out" } ],
-        "O_SOURCE_SELECT": [ { "direction": "out" } ]
+        "O_SOURCE_SELECT": [ { "direction": "out" } ],
+        "O_CHIP_MUX_SEL": [ { "direction": "out", "size_left": "1", "size_right": "0" } ]
       },
       "interfaces": {
         "S00_AXI": {

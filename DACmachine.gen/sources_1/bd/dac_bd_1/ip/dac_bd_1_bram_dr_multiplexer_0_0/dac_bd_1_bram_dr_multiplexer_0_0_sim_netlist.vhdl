@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 -- Date        : Sat Jun  7 22:52:38 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_bram_dr_multiplexer_0_0/dac_bd_1_bram_dr_multiplexer_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top dac_bd_1_bram_dr_multiplexer_0_0 -prefix
+--               dac_bd_1_bram_dr_multiplexer_0_0_ dac_bd_1_bram_dr_multiplexer_0_0_sim_netlist.vhdl
 -- Design      : dac_bd_1_bram_dr_multiplexer_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,8 +22,6 @@ entity dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer is
     direct_spi_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
     sel : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer : entity is "bram_dr_multiplexer";
 end dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer;
 
 architecture STRUCTURE of dac_bd_1_bram_dr_multiplexer_0_0_bram_dr_multiplexer is

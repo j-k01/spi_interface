@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-//Date        : Mon Jun  9 15:52:10 2025
+//Date        : Tue Jun 10 11:49:24 2025
 //Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
 //Command     : generate_target dac_bd_1_wrapper.bd
 //Design      : dac_bd_1_wrapper
@@ -40,8 +40,8 @@ module dac_bd_1_wrapper
     leds_0,
     miso_0,
     mosi_0,
-    sclk_0,
-    ss_n_0);
+    o_cs_n_0,
+    sclk_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -71,8 +71,8 @@ module dac_bd_1_wrapper
   output [1:0]leds_0;
   input miso_0;
   output mosi_0;
+  output [3:0]o_cs_n_0;
   output sclk_0;
-  output ss_n_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -103,8 +103,8 @@ module dac_bd_1_wrapper
   wire [1:0]leds_0;
   wire miso_0;
   wire mosi_0;
+  wire [3:0]o_cs_n_0;
   wire sclk_0;
-  wire ss_n_0;
 
   dac_bd_1 dac_bd_1_i
        (.DDR_addr(DDR_addr),
@@ -136,6 +136,6 @@ module dac_bd_1_wrapper
         .leds_0(leds_0),
         .miso_0(miso_0),
         .mosi_0(mosi_0),
-        .sclk_0(sclk_0),
-        .ss_n_0(ss_n_0));
+        .o_cs_n_0(o_cs_n_0),
+        .sclk_0(sclk_0));
 endmodule

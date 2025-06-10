@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Sat Jun  7 22:53:07 2025
+// Date        : Sat Jun  7 22:53:06 2025
 // Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_axi_bram_ctrl_0_bram_0/dac_bd_1_axi_bram_ctrl_0_bram_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top dac_bd_1_axi_bram_ctrl_0_bram_0 -prefix
+//               dac_bd_1_axi_bram_ctrl_0_bram_0_ dac_bd_1_axi_bram_ctrl_0_bram_0_stub.v
 // Design      : dac_bd_1_axi_bram_ctrl_0_bram_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:AXI_Control_Registers:1.0
-// IP Revision: 4
+// IP Revision: 6
 
 `timescale 1ns/1ps
 
@@ -81,7 +81,8 @@ module dac_bd_1_AXI_Control_Registers_0_0 (
   O_LDAC_FORCE_CTRL,
   O_MACRO_CONFIG,
   O_MACRO_START,
-  O_SOURCE_SELECT
+  O_SOURCE_SELECT,
+  O_CHIP_MUX_SEL
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *)
@@ -151,6 +152,7 @@ output wire O_MACRO_START;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SOURCE_SELECT, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SOURCE_SELECT DATA" *)
 output wire O_SOURCE_SELECT;
+output wire [1 : 0] O_CHIP_MUX_SEL;
 
   AXI_Control_Registers_v1_0 #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
@@ -183,6 +185,7 @@ output wire O_SOURCE_SELECT;
     .O_LDAC_FORCE_CTRL(O_LDAC_FORCE_CTRL),
     .O_MACRO_CONFIG(O_MACRO_CONFIG),
     .O_MACRO_START(O_MACRO_START),
-    .O_SOURCE_SELECT(O_SOURCE_SELECT)
+    .O_SOURCE_SELECT(O_SOURCE_SELECT),
+    .O_CHIP_MUX_SEL(O_CHIP_MUX_SEL)
   );
 endmodule

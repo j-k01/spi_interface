@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 // Date        : Sat Jun  7 01:58:51 2025
 // Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Configuration_Re_0_0/dac_bd_1_AXI_Configuration_Re_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top dac_bd_1_AXI_Configuration_Re_0_0 -prefix
+//               dac_bd_1_AXI_Configuration_Re_0_0_ dac_bd_1_AXI_Configuration_Re_0_0_sim_netlist.v
 // Design      : dac_bd_1_AXI_Configuration_Re_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,150 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "dac_bd_1_AXI_Configuration_Re_0_0,AXI_Configuration_Registers_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "AXI_Configuration_Registers_v1_0,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module dac_bd_1_AXI_Configuration_Re_0_0
-   (I_RX_DATA,
-    O_START,
-    O_TX_DATA,
-    I_DONE,
-    O_SPI_MODE,
-    O_BITS_PER_TRANSACTION,
-    O_CYCLES_PER_BIT,
-    O_SCLK_HIGH_OFFSET,
-    O_SCLK_LOW_OFFSET,
-    O_SDO_CHANGE_OFFSET,
-    O_SDI_SAMPLE_OFFSET,
-    O_CS_TO_TRX_DELAY,
-    O_CS_HOLD_TIME,
-    s00_axi_aclk,
-    s00_axi_aresetn,
-    s00_axi_awaddr,
-    s00_axi_awprot,
-    s00_axi_awvalid,
-    s00_axi_awready,
-    s00_axi_wdata,
-    s00_axi_wstrb,
-    s00_axi_wvalid,
-    s00_axi_wready,
-    s00_axi_bresp,
-    s00_axi_bvalid,
-    s00_axi_bready,
-    s00_axi_araddr,
-    s00_axi_arprot,
-    s00_axi_arvalid,
-    s00_axi_arready,
-    s00_axi_rdata,
-    s00_axi_rresp,
-    s00_axi_rvalid,
-    s00_axi_rready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 I_RX_DATA DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME I_RX_DATA, LAYERED_METADATA undef" *) input [31:0]I_RX_DATA;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_START DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_START, LAYERED_METADATA undef" *) output O_START;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_TX_DATA DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_TX_DATA, LAYERED_METADATA undef" *) output [31:0]O_TX_DATA;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 I_DONE DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME I_DONE, LAYERED_METADATA undef" *) input I_DONE;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SPI_MODE DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SPI_MODE, LAYERED_METADATA undef" *) output [1:0]O_SPI_MODE;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_BITS_PER_TRANSACTION DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_BITS_PER_TRANSACTION, LAYERED_METADATA undef" *) output [15:0]O_BITS_PER_TRANSACTION;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CYCLES_PER_BIT DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CYCLES_PER_BIT, LAYERED_METADATA undef" *) output [15:0]O_CYCLES_PER_BIT;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SCLK_HIGH_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SCLK_HIGH_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SCLK_HIGH_OFFSET;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SCLK_LOW_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SCLK_LOW_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SCLK_LOW_OFFSET;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SDO_CHANGE_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SDO_CHANGE_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SDO_CHANGE_OFFSET;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SDI_SAMPLE_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SDI_SAMPLE_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SDI_SAMPLE_OFFSET;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CS_TO_TRX_DELAY DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CS_TO_TRX_DELAY, LAYERED_METADATA undef" *) output [15:0]O_CS_TO_TRX_DELAY;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CS_HOLD_TIME DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CS_HOLD_TIME, LAYERED_METADATA undef" *) output [15:0]O_CS_HOLD_TIME;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [5:0]s00_axi_awaddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY" *) output s00_axi_awready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WDATA" *) input [31:0]s00_axi_wdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB" *) input [3:0]s00_axi_wstrb;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WVALID" *) input s00_axi_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WREADY" *) output s00_axi_wready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BRESP" *) output [1:0]s00_axi_bresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BVALID" *) output s00_axi_bvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *) input s00_axi_bready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [5:0]s00_axi_araddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *) input [2:0]s00_axi_arprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *) input s00_axi_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY" *) output s00_axi_arready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 12, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 6, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input s00_axi_rready;
-
-  wire \<const0> ;
-  wire I_DONE;
-  wire [31:0]I_RX_DATA;
-  wire [15:0]O_BITS_PER_TRANSACTION;
-  wire [15:0]O_CS_HOLD_TIME;
-  wire [15:0]O_CS_TO_TRX_DELAY;
-  wire [15:0]O_CYCLES_PER_BIT;
-  wire [15:0]O_SCLK_HIGH_OFFSET;
-  wire [15:0]O_SCLK_LOW_OFFSET;
-  wire [15:0]O_SDI_SAMPLE_OFFSET;
-  wire [15:0]O_SDO_CHANGE_OFFSET;
-  wire [1:0]O_SPI_MODE;
-  wire O_START;
-  wire [31:0]O_TX_DATA;
-  wire s00_axi_aclk;
-  wire [5:0]s00_axi_araddr;
-  wire s00_axi_aresetn;
-  wire s00_axi_arready;
-  wire s00_axi_arvalid;
-  wire [5:0]s00_axi_awaddr;
-  wire s00_axi_awready;
-  wire s00_axi_awvalid;
-  wire s00_axi_bready;
-  wire s00_axi_bvalid;
-  wire [31:0]s00_axi_rdata;
-  wire s00_axi_rready;
-  wire s00_axi_rvalid;
-  wire [31:0]s00_axi_wdata;
-  wire s00_axi_wready;
-  wire [3:0]s00_axi_wstrb;
-  wire s00_axi_wvalid;
-
-  assign s00_axi_bresp[1] = \<const0> ;
-  assign s00_axi_bresp[0] = \<const0> ;
-  assign s00_axi_rresp[1] = \<const0> ;
-  assign s00_axi_rresp[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0 inst
-       (.I_DONE(I_DONE),
-        .I_RX_DATA(I_RX_DATA),
-        .O_BITS_PER_TRANSACTION(O_BITS_PER_TRANSACTION),
-        .O_CS_HOLD_TIME(O_CS_HOLD_TIME),
-        .O_CS_TO_TRX_DELAY(O_CS_TO_TRX_DELAY),
-        .O_CYCLES_PER_BIT(O_CYCLES_PER_BIT),
-        .O_SCLK_HIGH_OFFSET(O_SCLK_HIGH_OFFSET),
-        .O_SCLK_LOW_OFFSET(O_SCLK_LOW_OFFSET),
-        .O_SDI_SAMPLE_OFFSET(O_SDI_SAMPLE_OFFSET),
-        .O_SDO_CHANGE_OFFSET(O_SDO_CHANGE_OFFSET),
-        .O_SPI_MODE(O_SPI_MODE),
-        .O_START(O_START),
-        .O_TX_DATA(O_TX_DATA),
-        .S_AXI_ARREADY(s00_axi_arready),
-        .S_AXI_AWREADY(s00_axi_awready),
-        .S_AXI_WREADY(s00_axi_wready),
-        .s00_axi_aclk(s00_axi_aclk),
-        .s00_axi_araddr(s00_axi_araddr[5:2]),
-        .s00_axi_aresetn(s00_axi_aresetn),
-        .s00_axi_arvalid(s00_axi_arvalid),
-        .s00_axi_awaddr(s00_axi_awaddr[5:2]),
-        .s00_axi_awvalid(s00_axi_awvalid),
-        .s00_axi_bready(s00_axi_bready),
-        .s00_axi_bvalid(s00_axi_bvalid),
-        .s00_axi_rdata(s00_axi_rdata),
-        .s00_axi_rready(s00_axi_rready),
-        .s00_axi_rvalid(s00_axi_rvalid),
-        .s00_axi_wdata(s00_axi_wdata),
-        .s00_axi_wstrb(s00_axi_wstrb),
-        .s00_axi_wvalid(s00_axi_wvalid));
-endmodule
-
-(* ORIG_REF_NAME = "AXI_Configuration_Registers_v1_0" *) 
 module dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0
    (S_AXI_AWREADY,
     S_AXI_WREADY,
@@ -323,7 +179,6 @@ module dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0
         .O(p_0_in));
 endmodule
 
-(* ORIG_REF_NAME = "AXI_Configuration_Registers_v1_0_S00_AXI" *) 
 module dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AXI
    (axi_awready_reg_0,
     axi_wready_reg_0,
@@ -4917,6 +4772,149 @@ module dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AX
         .D(start_pulse0),
         .Q(O_START),
         .R(SR));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "dac_bd_1_AXI_Configuration_Re_0_0,AXI_Configuration_Registers_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "AXI_Configuration_Registers_v1_0,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module dac_bd_1_AXI_Configuration_Re_0_0
+   (I_RX_DATA,
+    O_START,
+    O_TX_DATA,
+    I_DONE,
+    O_SPI_MODE,
+    O_BITS_PER_TRANSACTION,
+    O_CYCLES_PER_BIT,
+    O_SCLK_HIGH_OFFSET,
+    O_SCLK_LOW_OFFSET,
+    O_SDO_CHANGE_OFFSET,
+    O_SDI_SAMPLE_OFFSET,
+    O_CS_TO_TRX_DELAY,
+    O_CS_HOLD_TIME,
+    s00_axi_aclk,
+    s00_axi_aresetn,
+    s00_axi_awaddr,
+    s00_axi_awprot,
+    s00_axi_awvalid,
+    s00_axi_awready,
+    s00_axi_wdata,
+    s00_axi_wstrb,
+    s00_axi_wvalid,
+    s00_axi_wready,
+    s00_axi_bresp,
+    s00_axi_bvalid,
+    s00_axi_bready,
+    s00_axi_araddr,
+    s00_axi_arprot,
+    s00_axi_arvalid,
+    s00_axi_arready,
+    s00_axi_rdata,
+    s00_axi_rresp,
+    s00_axi_rvalid,
+    s00_axi_rready);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 I_RX_DATA DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME I_RX_DATA, LAYERED_METADATA undef" *) input [31:0]I_RX_DATA;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_START DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_START, LAYERED_METADATA undef" *) output O_START;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_TX_DATA DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_TX_DATA, LAYERED_METADATA undef" *) output [31:0]O_TX_DATA;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 I_DONE DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME I_DONE, LAYERED_METADATA undef" *) input I_DONE;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SPI_MODE DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SPI_MODE, LAYERED_METADATA undef" *) output [1:0]O_SPI_MODE;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_BITS_PER_TRANSACTION DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_BITS_PER_TRANSACTION, LAYERED_METADATA undef" *) output [15:0]O_BITS_PER_TRANSACTION;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CYCLES_PER_BIT DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CYCLES_PER_BIT, LAYERED_METADATA undef" *) output [15:0]O_CYCLES_PER_BIT;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SCLK_HIGH_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SCLK_HIGH_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SCLK_HIGH_OFFSET;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SCLK_LOW_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SCLK_LOW_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SCLK_LOW_OFFSET;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SDO_CHANGE_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SDO_CHANGE_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SDO_CHANGE_OFFSET;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_SDI_SAMPLE_OFFSET DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_SDI_SAMPLE_OFFSET, LAYERED_METADATA undef" *) output [15:0]O_SDI_SAMPLE_OFFSET;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CS_TO_TRX_DELAY DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CS_TO_TRX_DELAY, LAYERED_METADATA undef" *) output [15:0]O_CS_TO_TRX_DELAY;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 O_CS_HOLD_TIME DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME O_CS_HOLD_TIME, LAYERED_METADATA undef" *) output [15:0]O_CS_HOLD_TIME;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [5:0]s00_axi_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY" *) output s00_axi_awready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WDATA" *) input [31:0]s00_axi_wdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WSTRB" *) input [3:0]s00_axi_wstrb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WVALID" *) input s00_axi_wvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI WREADY" *) output s00_axi_wready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BRESP" *) output [1:0]s00_axi_bresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BVALID" *) output s00_axi_bvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *) input s00_axi_bready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *) input [5:0]s00_axi_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *) input [2:0]s00_axi_arprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *) input s00_axi_arvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARREADY" *) output s00_axi_arready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RDATA" *) output [31:0]s00_axi_rdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 12, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 6, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN dac_bd_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input s00_axi_rready;
+
+  wire \<const0> ;
+  wire I_DONE;
+  wire [31:0]I_RX_DATA;
+  wire [15:0]O_BITS_PER_TRANSACTION;
+  wire [15:0]O_CS_HOLD_TIME;
+  wire [15:0]O_CS_TO_TRX_DELAY;
+  wire [15:0]O_CYCLES_PER_BIT;
+  wire [15:0]O_SCLK_HIGH_OFFSET;
+  wire [15:0]O_SCLK_LOW_OFFSET;
+  wire [15:0]O_SDI_SAMPLE_OFFSET;
+  wire [15:0]O_SDO_CHANGE_OFFSET;
+  wire [1:0]O_SPI_MODE;
+  wire O_START;
+  wire [31:0]O_TX_DATA;
+  wire s00_axi_aclk;
+  wire [5:0]s00_axi_araddr;
+  wire s00_axi_aresetn;
+  wire s00_axi_arready;
+  wire s00_axi_arvalid;
+  wire [5:0]s00_axi_awaddr;
+  wire s00_axi_awready;
+  wire s00_axi_awvalid;
+  wire s00_axi_bready;
+  wire s00_axi_bvalid;
+  wire [31:0]s00_axi_rdata;
+  wire s00_axi_rready;
+  wire s00_axi_rvalid;
+  wire [31:0]s00_axi_wdata;
+  wire s00_axi_wready;
+  wire [3:0]s00_axi_wstrb;
+  wire s00_axi_wvalid;
+
+  assign s00_axi_bresp[1] = \<const0> ;
+  assign s00_axi_bresp[0] = \<const0> ;
+  assign s00_axi_rresp[1] = \<const0> ;
+  assign s00_axi_rresp[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0 inst
+       (.I_DONE(I_DONE),
+        .I_RX_DATA(I_RX_DATA),
+        .O_BITS_PER_TRANSACTION(O_BITS_PER_TRANSACTION),
+        .O_CS_HOLD_TIME(O_CS_HOLD_TIME),
+        .O_CS_TO_TRX_DELAY(O_CS_TO_TRX_DELAY),
+        .O_CYCLES_PER_BIT(O_CYCLES_PER_BIT),
+        .O_SCLK_HIGH_OFFSET(O_SCLK_HIGH_OFFSET),
+        .O_SCLK_LOW_OFFSET(O_SCLK_LOW_OFFSET),
+        .O_SDI_SAMPLE_OFFSET(O_SDI_SAMPLE_OFFSET),
+        .O_SDO_CHANGE_OFFSET(O_SDO_CHANGE_OFFSET),
+        .O_SPI_MODE(O_SPI_MODE),
+        .O_START(O_START),
+        .O_TX_DATA(O_TX_DATA),
+        .S_AXI_ARREADY(s00_axi_arready),
+        .S_AXI_AWREADY(s00_axi_awready),
+        .S_AXI_WREADY(s00_axi_wready),
+        .s00_axi_aclk(s00_axi_aclk),
+        .s00_axi_araddr(s00_axi_araddr[5:2]),
+        .s00_axi_aresetn(s00_axi_aresetn),
+        .s00_axi_arvalid(s00_axi_arvalid),
+        .s00_axi_awaddr(s00_axi_awaddr[5:2]),
+        .s00_axi_awvalid(s00_axi_awvalid),
+        .s00_axi_bready(s00_axi_bready),
+        .s00_axi_bvalid(s00_axi_bvalid),
+        .s00_axi_rdata(s00_axi_rdata),
+        .s00_axi_rready(s00_axi_rready),
+        .s00_axi_rvalid(s00_axi_rvalid),
+        .s00_axi_wdata(s00_axi_wdata),
+        .s00_axi_wstrb(s00_axi_wstrb),
+        .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
 -- Date        : Sat Jun  7 01:58:51 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Configuration_Re_0_0/dac_bd_1_AXI_Configuration_Re_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top dac_bd_1_AXI_Configuration_Re_0_0 -prefix
+--               dac_bd_1_AXI_Configuration_Re_0_0_ dac_bd_1_AXI_Configuration_Re_0_0_sim_netlist.vhdl
 -- Design      : dac_bd_1_AXI_Configuration_Re_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -50,8 +50,6 @@ entity dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AX
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AXI : entity is "AXI_Configuration_Registers_v1_0_S00_AXI";
 end dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AXI;
 
 architecture STRUCTURE of dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0_S00_AXI is
@@ -6019,8 +6017,6 @@ entity dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0 : entity is "AXI_Configuration_Registers_v1_0";
 end dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0;
 
 architecture STRUCTURE of dac_bd_1_AXI_Configuration_Re_0_0_AXI_Configuration_Registers_v1_0 is

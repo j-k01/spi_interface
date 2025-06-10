@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
--- Date        : Sat Jun  7 22:52:49 2025
+-- Date        : Sat Jun  7 22:52:48 2025
 -- Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_axi_bram_ctrl_0_0/dac_bd_1_axi_bram_ctrl_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top dac_bd_1_axi_bram_ctrl_0_0 -prefix
+--               dac_bd_1_axi_bram_ctrl_0_0_ dac_bd_1_axi_bram_ctrl_0_0_sim_netlist.vhdl
 -- Design      : dac_bd_1_axi_bram_ctrl_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,8 +39,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_sng_port_arb is
     AW2Arb_Active_Clr : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_sng_port_arb : entity is "sng_port_arb";
 end dac_bd_1_axi_bram_ctrl_0_0_sng_port_arb;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_sng_port_arb is
@@ -411,8 +409,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_wrap_brst is
     \save_init_bram_addr_ld_reg[3]_0\ : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_wrap_brst : entity is "wrap_brst";
 end dac_bd_1_axi_bram_ctrl_0_0_wrap_brst;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_wrap_brst is
@@ -1565,8 +1561,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_rd_chnl is
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_rd_chnl : entity is "rd_chnl";
 end dac_bd_1_axi_bram_ctrl_0_0_rd_chnl;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_rd_chnl is
@@ -4422,8 +4416,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_wr_chnl is
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_wr_chnl : entity is "wr_chnl";
 end dac_bd_1_axi_bram_ctrl_0_0_wr_chnl;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_wr_chnl is
@@ -5358,8 +5350,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_full_axi is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_full_axi : entity is "full_axi";
 end dac_bd_1_axi_bram_ctrl_0_0_full_axi;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_full_axi is
@@ -5774,8 +5764,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl_top : entity is "axi_bram_ctrl_top";
 end dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl_top;
 
 architecture STRUCTURE of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
@@ -5926,8 +5914,6 @@ entity dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl is
   attribute C_S_AXI_PROTOCOL of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "AXI4";
   attribute C_S_AXI_SUPPORTS_NARROW_BURST : integer;
   attribute C_S_AXI_SUPPORTS_NARROW_BURST of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "axi_bram_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "yes";
 end dac_bd_1_axi_bram_ctrl_0_0_axi_bram_ctrl;

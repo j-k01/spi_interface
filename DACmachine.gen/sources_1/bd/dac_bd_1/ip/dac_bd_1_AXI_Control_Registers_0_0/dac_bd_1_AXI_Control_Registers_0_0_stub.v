@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Mon Jun  9 13:14:34 2025
+// Date        : Tue Jun 10 11:17:07 2025
 // Host        : DESKTOP-32F9FGL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               d:/DAVIS/Research/Demo/DACmachine/DACmachine.gen/sources_1/bd/dac_bd_1/ip/dac_bd_1_AXI_Control_Registers_0_0/dac_bd_1_AXI_Control_Registers_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top dac_bd_1_AXI_Control_Registers_0_0 -prefix
+//               dac_bd_1_AXI_Control_Registers_0_0_ dac_bd_1_AXI_Control_Registers_0_0_stub.v
 // Design      : dac_bd_1_AXI_Control_Registers_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
@@ -20,8 +20,9 @@ module dac_bd_1_AXI_Control_Registers_0_0(s00_axi_aclk, s00_axi_aresetn,
   s00_axi_wstrb, s00_axi_wvalid, s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, 
   s00_axi_bready, s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, 
   s00_axi_rdata, s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, O_LDAC_CTRL, O_RST_CTRL, 
-  O_CLR_CTRL, O_LDAC_FORCE_CTRL, O_MACRO_CONFIG, O_MACRO_START, O_SOURCE_SELECT)
-/* synthesis syn_black_box black_box_pad_pin="s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,O_LDAC_CTRL,O_RST_CTRL,O_CLR_CTRL,O_LDAC_FORCE_CTRL,O_MACRO_CONFIG[2:0],O_MACRO_START,O_SOURCE_SELECT" */
+  O_CLR_CTRL, O_LDAC_FORCE_CTRL, O_MACRO_CONFIG, O_MACRO_START, O_SOURCE_SELECT, 
+  O_CHIP_MUX_SEL)
+/* synthesis syn_black_box black_box_pad_pin="s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,O_LDAC_CTRL,O_RST_CTRL,O_CLR_CTRL,O_LDAC_FORCE_CTRL,O_MACRO_CONFIG[2:0],O_MACRO_START,O_SOURCE_SELECT,O_CHIP_MUX_SEL[1:0]" */
 /* synthesis syn_force_seq_prim="s00_axi_aclk" */;
   input s00_axi_aclk /* synthesis syn_isclock = 1 */;
   input s00_axi_aresetn;
@@ -51,4 +52,5 @@ module dac_bd_1_AXI_Control_Registers_0_0(s00_axi_aclk, s00_axi_aresetn,
   output [2:0]O_MACRO_CONFIG;
   output O_MACRO_START;
   output O_SOURCE_SELECT;
+  output [1:0]O_CHIP_MUX_SEL;
 endmodule
